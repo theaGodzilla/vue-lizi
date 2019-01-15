@@ -1,25 +1,7 @@
 html,body{height:100%;}
-html{color: #333;}
-body{margin:0;padding:0;font:14px/1.4 "Microsoft YaHei",arial}
+body{margin:0;padding:0;}
 body>div{height:100%;}
 .page{height:100%;}
 @function rem($px){
     @return $px / 37.5px * 1rem;
-}
-ul,li{
-    list-style: none;
-}
-a{
-    text-decoration: none;
-}
-em,i{
-    font-style: normal;
-}
-input{
-    border: none;
-    background: none;
-    outline: 0;
-    resize: none;
-    border-radius: 0;
-    -webkit-appearance: none;
 }

@@ -1,6 +1,6 @@
 <template>
- <div class="page">
-    <h1>Lizi</h1>
+<div class="page">
+    <h1>l</h1>
     <tabbar/>
   </div>
 </template>

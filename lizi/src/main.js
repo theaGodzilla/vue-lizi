@@ -3,7 +3,11 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+
+import "./assets/font01/iconfont.css";
+import "./assets/font01/iconfont.js";
 import "./assets/font/iconfont.css";
+
 // import "lib-flexible/flexible";
 
 // import "./sass/common.scss";
@@ -22,8 +26,8 @@ import "./assets/font/iconfont.css";
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  components: { App },
-  template: '<App/>',
-  // render:h=>h(App),
+  // components: { App },
+  // template: '<App/>',
+  render:h=>h(App),
   router
 })
