@@ -58,7 +58,7 @@ export default {
             path:'/list',
             name:'List'
         },{
-            text:'丽子圈',
+            text:'宝贝',
             icon:'icon-iconquanzinor',
             path:'/circle',
             name:'Circle'

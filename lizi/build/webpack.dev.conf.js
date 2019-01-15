@@ -44,7 +44,14 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           target:"http://m.lizi.com/newIndex",//代理目标服务器
           changeOrigin: true,
           pathRewrite: {'^/dbapi' : ''}, //替换部分路径
+      },
+      '/api':{
+          target:"http://m.jumei.com/search/index?ajax=get",
+          changeOrigin:true,
+          pathRewrite:{'^api':''}
       }
+
+      
     },
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
