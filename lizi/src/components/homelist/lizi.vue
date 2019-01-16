@@ -108,16 +108,16 @@ export default {
     // this.getdata();
     
     this.$axios.get("/dbapi").then(res=>{
-        console.log(res.data.model);
+        // console.log(res.data.model);
         this.Banner = res.data.model.banners.list;
         // console.log(this.Banner);
         this.Navlists = res.data.model.menus.list;
         // console.log(this.Navlists);
         this.Partbds = res.data.model.sourceAdv.model;
-        console.log(this.Partbds);
+        // console.log(this.Partbds);
     })
     this.$axios.get("/dbapi/recItems?max=10&url=%2FnewIndex%2FrecItems&id=&type=HOT&off").then(res=>{
-        console.log(res.data.model);
+        // console.log(res.data.model);
         this.Hotlist = res.data.model;
 
     })

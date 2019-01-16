@@ -46,13 +46,13 @@ export default {
       // console.log(this.$route.matched[0].path);
       // let path = this.$route.matched[0].path.replace('/home','/');
       // console.log(path);
-      console.log(this.$router.options.routes[0].path);
+      // console.log(this.$router.options.routes[0].path);
       this.$router.push({path:this.$router.options.routes[0].path+name});
     },
     to(name){
       // console.log(obj)
       this.$router.push({path:'/home/'+name});
-      console.log(this.$router);
+      // console.log(this.$router);
     },
     getdata(){
       this.$axios.get("/dbapi/getIndexNavigator?_=1547221028227").then(res=>{
