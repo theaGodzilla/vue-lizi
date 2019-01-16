@@ -24,12 +24,11 @@ import { Indicator } from 'mint-ui';
  axios.interceptors.request.use(
       config => {
         Indicator.open();
-        console.log('config:',config);
+        // console.log('config:',config);
         // config.params.token = '10086';
         return config
     }, error => {
         Indicator.close();
-        
         return Promise.reject(error)
     })
     // http响应拦截器
