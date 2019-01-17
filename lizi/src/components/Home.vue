@@ -1,11 +1,9 @@
 <template>
   <div id="Home" class="page">
     <h1>Home</h1>
-    <tabbar/>
   </div>
 </template>
 <script>
-  import Tabbar from './Tabbar';
 
   export default {
 
@@ -14,9 +12,7 @@
       return {}
 
     },
-    components: {
-      Tabbar
-    },
+
   }
 
 </script>

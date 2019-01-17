@@ -4,20 +4,19 @@
       <div class="minetop">
         <i class="iconfont icon-shezhi"></i>
         <div class="photo">
-          <p class="headimg" @click="goto"><img src="../images/photo.jpg" alt=""></p>
+          <p class="headimg" @click="goto"><img src="@img/photo.jpg" alt=""></p>
           <p class="headdeg" @click="goto" :style="{display:isshowname?'none':'inline-block'}">点击登录账户</p>
           <p class="headdeg" :style="{display:isshowname?'inline-block':'none'}">{{user}}</p>
         </div>
       </div>
       <mine-list />
-      <tabbar />
     </div>
   </div>
 </template>
 
 <script>
-  import Tabbar from './Tabbar';
-  import MineList from './MineList'
+
+  import MineList from './MineList';
 
   export default {
     data() {
@@ -37,7 +36,6 @@
       }
     },
     components: {
-      Tabbar,
       MineList
     },
     created() {
@@ -64,7 +62,7 @@
       .minetop {
         width: 100%;
         height: 25%;
-        background: url(../images/mineback.jpg) no-repeat;
+        background: url(../../images/mineback.jpg) no-repeat;
         background-size: cover;
         background-clip: content-box;
         position: relative;

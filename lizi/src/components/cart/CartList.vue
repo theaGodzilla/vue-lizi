@@ -4,7 +4,7 @@
         <li>
           <input type="checkbox" name="" id="check">
           <label for="check"></label>
-          <img class="firstphoto" src="../images/photo.jpg" alt="" srcset="">
+          <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
           <div class="title">
             <p>2018新款韩范李玲系带百搭纯色长袖宽松衬衫女</p>
             <p :class="popupVisible" @click="popups">Lffffffff <b>∨</b>
@@ -13,7 +13,7 @@
             <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
               <ul>
                 <li>
-                  <img class="secondphoto" src="../images/photo.jpg" alt="" srcset="">
+                  <img class="secondphoto" src="@img/photo.jpg" alt="" srcset="">
                   <div class="popuptip">
                     <p class="price">￥475</p>
                     <p class="invertory">库存198件</p>
@@ -42,7 +42,7 @@
         <li>
           <input type="checkbox" name="" id="check">
           <label for="check"></label>
-          <img class="firstphoto" src="../images/photo.jpg" alt="" srcset="">
+          <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
           <div class="title">
             <p>2018新款韩范李玲系带百搭纯色长袖宽松衬衫女</p>
             <p :class="popupVisible" @click="popups">Lffffffff <b>∨</b>
@@ -51,7 +51,7 @@
             <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
               <ul>
                 <li>
-                  <img class="secondphoto" src="../images/photo.jpg" alt="" srcset="">
+                  <img class="secondphoto" src="@img/photo.jpg" alt="" srcset="">
                   <div class="popuptip">
                     <p class="price">￥475</p>
                     <p class="invertory">库存198件</p>
@@ -83,7 +83,7 @@
         <li>
           <input type="checkbox" name="" id="check">
           <label for="check"></label>
-          <img class="firstphoto" src="../images/photo.jpg" alt="" srcset="">
+          <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
           <div class="title">
             <p>2018新款韩范李玲系带百搭纯色长袖宽松衬衫女</p>
             <p :class="popupVisible" @click="popups">Lffffffff <b>∨</b>
@@ -92,7 +92,7 @@
             <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
               <ul>
                 <li>
-                  <img class="secondphoto" src="../images/photo.jpg" alt="" srcset="">
+                  <img class="secondphoto" src="@img/photo.jpg" alt="" srcset="">
                   <div class="popuptip">
                     <p class="price">￥475</p>
                     <p class="invertory">库存198件</p>
@@ -124,7 +124,7 @@
         <li>
           <input type="checkbox" name="" id="check">
           <label for="check"></label>
-          <img class="firstphoto" src="../images/photo.jpg" alt="" srcset="">
+          <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
           <div class="title">
             <p>2018新款韩范李玲系带百搭纯色长袖宽松衬衫女</p>
             <p :class="popupVisible" @click="popups">Lffffffff <b>∨</b>
@@ -133,7 +133,7 @@
             <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
               <ul>
                 <li>
-                  <img class="secondphoto" src="../images/photo.jpg" alt="" srcset="">
+                  <img class="secondphoto" src="@img/photo.jpg" alt="" srcset="">
                   <div class="popuptip">
                     <p class="price">￥475</p>
                     <p class="invertory">库存198件</p>
@@ -165,7 +165,7 @@
         <li>
           <input type="checkbox" name="" id="check">
           <label for="check"></label>
-          <img class="firstphoto" src="../images/photo.jpg" alt="" srcset="">
+          <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
           <div class="title">
             <p>2018新款韩范李玲系带百搭纯色长袖宽松衬衫女</p>
             <p :class="popupVisible" @click="popups">Lffffffff <b>∨</b>
@@ -174,7 +174,7 @@
             <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
               <ul>
                 <li>
-                  <img class="secondphoto" src="../images/photo.jpg" alt="" srcset="">
+                  <img class="secondphoto" src="@img/photo.jpg" alt="" srcset="">
                   <div class="popuptip">
                     <p class="price">￥475</p>
                     <p class="invertory">库存198件</p>
@@ -206,7 +206,7 @@
         <li>
           <input type="checkbox" name="" id="check">
           <label for="check"></label>
-          <img class="firstphoto" src="../images/photo.jpg" alt="" srcset="">
+          <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
           <div class="title">
             <p>2018新款韩范李玲系带百搭纯色长袖宽松衬衫女</p>
             <p :class="popupVisible" @click="popups">Lffffffff <b>∨</b>
@@ -215,7 +215,7 @@
             <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
               <ul>
                 <li>
-                  <img class="secondphoto" src="../images/photo.jpg" alt="" srcset="">
+                  <img class="secondphoto" src="@img/photo.jpg" alt="" srcset="">
                   <div class="popuptip">
                     <p class="price">￥475</p>
                     <p class="invertory">库存198件</p>
@@ -246,7 +246,7 @@
         </li><li>
           <input type="checkbox" name="" id="check">
           <label for="check"></label>
-          <img class="firstphoto" src="../images/photo.jpg" alt="" srcset="">
+          <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
           <div class="title">
             <p>2018新款韩范李玲系带百搭纯色长袖宽松衬衫女</p>
             <p :class="popupVisible" @click="popups">Lffffffff <b>∨</b>
@@ -255,7 +255,7 @@
             <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
               <ul>
                 <li>
-                  <img class="secondphoto" src="../images/photo.jpg" alt="" srcset="">
+                  <img class="secondphoto" src="@img/photo.jpg" alt="" srcset="">
                   <div class="popuptip">
                     <p class="price">￥475</p>
                     <p class="invertory">库存198件</p>

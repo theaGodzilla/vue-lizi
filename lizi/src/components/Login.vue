@@ -77,7 +77,7 @@ export default {
             .is-left{
                 color: rgb(92, 89, 89);
                 .mintui-back{
-                   font-size: rem(20px); 
+                   font-size: rem(15px); 
                 }
             }
         } 
