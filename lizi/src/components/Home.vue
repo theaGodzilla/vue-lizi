@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       navs:[],
-      selected:'Lizi',
+      selected:'',
     };
   },
   methods: {
@@ -46,7 +46,7 @@ export default {
       // console.log(this.$route.matched[0].path);
       // let path = this.$route.matched[0].path.replace('/home','/');
       // console.log(path);
-      // console.log(this.$router.options.routes[0].path);
+      // console.log(this.$router.options.routes[0].path+name);
       this.$router.push({path:this.$router.options.routes[0].path+name});
     },
     to(name){
@@ -60,6 +60,7 @@ export default {
         this.navs = res.data.model.list;
         // console.log(this.navs);
         this.navs.unshift({'id':'ndckdnksv2312313fcsdfnks','mark':'','title':'丽子','type':'ITEM'});
+        // console.log(this.navs);
         // console.log(this.navs[0].id);
         // this.selected = this.navs[0].id;
       })
@@ -73,13 +74,8 @@ export default {
     // console.log(this.$route);
     // console.log(this.$route.path.split('/')[2]);
     this.selected = this.$route.path.split('/')[2];
-  },
-  // watch:{
-  //   $route(to,from){
-  //     console.log(to,from);
-  //     this.selected = to.path;
-  //   }
-  // }
+    // this.selected = this.$route.name;
+  }
 
 }
 </script>

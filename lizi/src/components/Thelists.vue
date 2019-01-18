@@ -44,7 +44,7 @@ export default {
     },
     methods:{
         goto(name,id){
-            console.log(this.$router);
+            // console.log(this.$router);
             this.$router.push({path:name,query:{id:id.item_id,type:id.type}})
         }
     },
