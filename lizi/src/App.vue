@@ -83,7 +83,7 @@ export default {
     }
   },
   created(){
-    console.log(this.$route);
+    // console.log(this.$route);
     if( this.$route.name == 'Lizi' || 'Top' ){
       this.selected = 'Home';
     }else{
