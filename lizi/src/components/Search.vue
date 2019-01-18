@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import bus from '../assets/js/eventBus.js';
+// import bus from '../assets/js/eventBus.js';
 export default {
     data() {
         return {
@@ -37,28 +37,13 @@ export default {
             // obj.params = { keyword:this.search };//把搜索词传到列表页
 
             // console.log(obj.params);//
-            bus.$emit('keyword',this.search);
+            // bus.$emit('keyword',this.search);
             // console.log(this.$router.options.routes[0].path);
-            this.$router.push({path:name});
+            this.$router.push({path:name,query:{keyword:this.search}});
+            console.log(888);
         },
-        //传参到list
-        // to(name){
-
-        // }
-        // insearch(){
-        //     if(!this.search) return;
-        //     this.$axios.get("/dbapi/itemSearch/search",{
-        //         params:{
-        //             ciyu : this.search
-        //         }
-        //     })
-        //     .then(res=>{
-        //         console.log(res);
-        //     })
-        // }
     },
     created() {
-        // this.search = input.value
 
     },
 }

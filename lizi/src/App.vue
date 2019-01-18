@@ -73,7 +73,8 @@ export default {
             name:'Person'
         }
       ],
-      selected:'Home'
+      selected:'',
+      // url:''
     }
   },
   methods: {
@@ -81,8 +82,16 @@ export default {
       this.$router.push({path});
     }
   },
-   
+  created(){
+    console.log(this.$route);
+    if( this.$route.name == 'Lizi' || 'Top' ){
+      this.selected = 'Home';
+    }else{
+      this.selected =this.$route.name;
+    }
+    
 
+  }
 }
 </script>
 

@@ -21,6 +21,7 @@ import Cart from '@com/Cart';
 import Person from '@com/Person';
 import Search from '@com/Search';
 import Thelists from '@com/Thelists';
+import Detail from '@com/detail';
 
 //
 
@@ -111,6 +112,11 @@ export default new Router({
       path:'/thelists',
       name:'Thelists',
       component:Thelists
+    },
+    {
+      path:'/detail',
+      name:'Detail',
+      component:Detail
     }
   ]
 })

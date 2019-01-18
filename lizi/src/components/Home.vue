@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       navs:[],
-      selected:'ndckdnksv2312313fcsdfnks',
+      selected:'Lizi',
     };
   },
   methods: {
@@ -70,7 +70,16 @@ export default {
   // },
   created() {
     this.getdata();
+    // console.log(this.$route);
+    // console.log(this.$route.path.split('/')[2]);
+    this.selected = this.$route.path.split('/')[2];
   },
+  // watch:{
+  //   $route(to,from){
+  //     console.log(to,from);
+  //     this.selected = to.path;
+  //   }
+  // }
 
 }
 </script>
