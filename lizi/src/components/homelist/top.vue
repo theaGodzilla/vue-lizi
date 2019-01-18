@@ -62,7 +62,7 @@ export default {
         .then(res=>{
             // console.log(res.data.model.data);
             this.Mainlist = res.data.model.data;//懒加载五条
-            console.log(this.Mainlist);
+            // console.log(this.Mainlist);
         })
     },
 }

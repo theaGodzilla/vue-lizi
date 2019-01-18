@@ -46,7 +46,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           pathRewrite: {'^/dbapi' : ''}, //替换部分路径
       },
       '/api':{
-          target:"http://h5.jumei.com/search",
+          target:"http://h5.jumei.com",
           changeOrigin:true,
           pathRewrite:{'^/api':''}
       }
