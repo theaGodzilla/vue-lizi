@@ -76,7 +76,10 @@ Router.post('/reg',bodyparser.urlencoded({extended:false}),(req,res)=>{
   console.log(req);
   // res.send('hello world');
   // 获取传来的用户名
-  let {username,password} = req.body;
+  let {username,password} = req.query;
+  let nickname = Math.random().toString(36).substr(2);
+    console.log("nickname",nickname)
+
   //连接数据库
   MongoClient.connect('mongodb://localhost:27017',(err,database)=>{
       //连接成功后执行回调函数
@@ -90,8 +93,8 @@ Router.post('/reg',bodyparser.urlencoded({extended:false}),(req,res)=>{
       let user = db.collection('user');
 
       //添加数据
-      user.insert({user:username,password,thetime:Date.now()},(err,result)=>{
-        console.log(result);
+      user.insertOne({user:username,password,nickname,headerphoto:'photo.jpg',thetime:Date.now()},(err,result)=>{
+        // console.log(result);
         if(err){
             res.send({
                 code:0,
@@ -155,8 +158,51 @@ Router.post('/login',bodyparser.urlencoded({extended:false}),(req,res)=>{
   })
 })
 
-// 上传
-// Router.use('/upload',uploadRouter)
+// 关于查找昵称
+Router.get('/checknickname',(req,res)=>{
+    // console.log(req);
+    // res.send('hello world');
+    // 获取传来的用户名
+    let {username} = req.query;
+    //连接数据库
+    MongoClient.connect('mongodb://localhost:27017',(err,database)=>{
+        //连接成功后执行回调函数
+        //如果有错误就抛出错误
+        if(err) throw err;
+  
+        //使用某个数据库，没有就自动创建一个
+        let db = database.db('lizi');
+  
+        //使用数据库里面的集合（表）
+        let user = db.collection('user');
+  
+        //查询
+        user.findOne({user:username},(err,result)=>{
+            if(err) throw err;
+            // console.log(result);//若存在，则出现信息，如不存在则出现null
+            if( result ){
+                //已有
+                res.send({
+                    code:1,
+                    data:{
+                        nickname:result.nickname,
+                        headerphoto:result.headerphoto
+                    },
+                    msg:'成功'
+                })
+            }else{
+                // 错误
+                res.send({
+                    code:0,
+                    data:[],
+                    msg:'失败'
+                })
+            }
+        })
+        //关闭数据库,避免资源浪费
+        database.close();
+    })
+  })
 
 module.exports = Router;
 // console.log(Router)

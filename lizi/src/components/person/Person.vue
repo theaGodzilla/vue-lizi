@@ -4,26 +4,27 @@
       <div class="minetop">
         <i class="iconfont icon-shezhi"></i>
         <div class="photo">
-          <p class="headimg" @click="goto"><img src="../images/photo.jpg" alt=""></p>
+          <p class="headimg" @click="goto"><img src="@img/photo.jpg" alt=""></p>
+          <!-- <p class="headimg" @click="goto" :style="{display:isshowname?'inline-block':'none'}"><img src="@img/photo.jpg" alt=""></p> -->
           <p class="headdeg" @click="goto" :style="{display:isshowname?'none':'inline-block'}">点击登录账户</p>
           <p class="headdeg" :style="{display:isshowname?'inline-block':'none'}">{{user}}</p>
         </div>
       </div>
       <mine-list />
-      <tabbar />
     </div>
   </div>
 </template>
 
 <script>
-  import Tabbar from './Tabbar';
-  import MineList from './MineList'
+
+  import MineList from './MineList';
 
   export default {
     data() {
       return {
+        user: '',
+        headerphoto: '',
         isshowname: false,
-        user: ''
       }
     },
     methods: {
@@ -37,18 +38,33 @@
       }
     },
     components: {
-      Tabbar,
       MineList
     },
     created() {
       // console.log(localStorage.getItem('name'));
       if (localStorage.getItem('name')) {
         let name = localStorage.getItem('name');
-        let slice = name.substr(3, 4)
-        let showname = name.replace(slice, '****');
+        // let slice = name.substr(3, 4)
+        // let showname = name.replace(slice, '****');
         // console.log(showname);
-        this.user = showname;
-        this.isshowname = true;
+        // let showname = parseInt(Math.random()*10000000);
+        // console.log(Math.random().toString(36).substr(2));
+        this.$axios.get('http://localhost:17171/checknickname',{
+          params:{
+            username:name
+          }
+        }).then(res=>{
+          // console.log(res);
+          let {data} = res.data;
+          this.user = data.nickname;
+          this.headerphoto = data.headerphoto;
+          this.isshowname = true;
+          localStorage.setItem('Nname',data);
+        })
+        
+      }else{
+        this.user = '';
+        this.isshowname = false;
       }
     }
   }
@@ -64,7 +80,7 @@
       .minetop {
         width: 100%;
         height: 25%;
-        background: url(../images/mineback.jpg) no-repeat;
+        background: url(../../images/mineback.jpg) no-repeat;
         background-size: cover;
         background-clip: content-box;
         position: relative;

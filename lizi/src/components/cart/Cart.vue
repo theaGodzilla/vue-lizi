@@ -16,32 +16,20 @@
 
         <cart-list />
       </div>
-
-
     </div>
 
-    <div class="fixfloor">
-      <p>
-        <car-bottom />
-      </p>
-      <p>
-        <tabbar />
-      </p>
-    </div>
   </div>
 </template>
 
 <script>
-  import Tabbar from './Tabbar';
-  import CartList from './CartList';
-  import CarBottom from './CarBottom';
-  export default {
 
+  import CartList from './CartList';
+  export default {
+    
     components: {
-      Tabbar,
       CartList,
-      CarBottom
     },
+    
   }
 
 </script>
@@ -119,11 +107,11 @@
       input {
         display: inline-block;
         border-radius: 50%;
-        width: rem(12px);
-        height: rem(12px);
+        width: rem(11px);
+        height: rem(11px);
         text-align: center;
         vertical-align: middle;
-        line-height: rem(12px);
+        line-height: rem(11px);
         position: relative;
         margin-left: rem(10px);
         top: rem(20px);
@@ -132,10 +120,10 @@
         &::before {
           content: "";
           position: absolute;
-          width: rem(12px);
-          height: rem(12px);
-          top: 0;
-          left: 0;
+          width: rem(13px) !important;
+          height: rem(13px) !important;
+          top: rem(-2px);
+          left: rem(-2px);
           background: #fff;
           width: 100%;
           height: 100%;
@@ -147,8 +135,8 @@
           content: "\2713";
           background-color: #fff;
           position: absolute;
-          top: 0;
-          left: 0;
+          top: rem(-2px);
+          left: rem(-2px);
           width: 100%;
           border: rem(1px) solid #e50232;
           color: #e50232;
@@ -167,9 +155,10 @@
 
   .fixfloor {
     position: fixed;
-    bottom: 0;
+    bottom: rem(45px);
     width: 100%;
-    height: 17%;
+    height: auto;
+    overflow: hidden;
     clear: both;
 
     // overflow: hidden;

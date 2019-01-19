@@ -72,12 +72,13 @@ export default {
         height: 100%;
         background: url(../images/degback.jpg) no-repeat;
         background-size: cover;
+        overflow: hidden;
         header{
             background: none;
             .is-left{
                 color: rgb(92, 89, 89);
                 .mintui-back{
-                   font-size: rem(20px); 
+                   font-size: rem(15px); 
                 }
             }
         } 

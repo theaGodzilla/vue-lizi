@@ -152,7 +152,7 @@
             let username = this.tel;
             let password = this.psw;
             this.$axios.post(`http://localhost:17171/reg?username=${username}&password=${password}`).then(res => {
-              // console.log(res);
+              console.log(res);
               let code = res.data.code;
               if (code = 1) {
                 this.$router.push('/login')
@@ -179,6 +179,7 @@
     height: 100%;
     background: url(../images/degback.jpg) no-repeat;
     background-size: cover;
+    overflow: hidden;
 
     header {
       background: none;
