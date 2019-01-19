@@ -39,8 +39,21 @@
                     </div>
                 </div>
                 <!-- 型号分类 -->
-                <div class="page_sku_wrapper">
-
+                <div class="page_sku_wrapper" @click="goto()">
+                    <div class="page_sku_bar">
+                        <span>请选择</span>
+                        <div>
+                            <strong>型号</strong>
+                            <strong>分类</strong>
+                        </div>
+                    </div>
+                    
+                </div>
+                <mt-popup v-model="display" position="bottom">
+                    我是弹框
+                </mt-popup>
+                <div class="conments">
+                    <p>买过的人这样说</p>
                 </div>
             </main>
             <footer>
@@ -54,11 +67,14 @@ export default {
     data(){
         return{
             lists:[],
-            thelist:[]
+            thelist:[],
+            display:false,
         }
     },
     methods:{
-
+        goto(){
+            this.display = !this.display;
+        }
     },
     created(){
         // console.log(this.$route);
@@ -180,7 +196,7 @@ export default {
                 display: inline-block;
                 font-size: rem(15px);
                 // vertical-align: top;
-                text-align: center;
+                text-align: left;
                 float: left;
                 padding: rem(12px) 0;
             }
@@ -200,13 +216,33 @@ export default {
             
         }
         .page_sku_wrapper{
-            padding: rem(15px) 0;
+            padding: rem(11px) 0;
             background: #eee;
+            .page_sku_bar{
+                display: flex;
+                 padding: rem(15px);
+                 font-size: rem(14px);
+                 background: white;
+                 span{
+                     color: #999;
+                     width: 22%;
+                 }
+                 strong{
+                    font-weight: 400;
+                 }
+            }
+        }
+        .conments{
+            padding: 0 rem(18px);
+            p{
+                line-height: rem(30px);
+            }
         }
     }
     footer{
-        height: rem(44px);
+        height: rem(50px);
         width: 100%;
+        
     }
 }
 </style>
