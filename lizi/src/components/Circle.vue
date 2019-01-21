@@ -23,7 +23,6 @@
       <!-- <router-view></router-view> -->
     </div>
    
-
     <!-- 内容模块 -->
     <div class="partbd">
       <ul class="product_list" id="search_list">
