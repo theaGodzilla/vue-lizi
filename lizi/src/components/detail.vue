@@ -24,7 +24,7 @@
                     <span class="cur_num">{{lists.buyer_number_text}}</span>
                 </div>
                 <div class="normal_desc">
-                    <span class="desc_iconv2">{{thelist.special_tags?thelist.special_tags.jm_owner:''}}</span>
+                    <span class="desc_iconv2" :style="{display:thelist.special_tags.jm_owner?'inline-block':'none'}">{{thelist.special_tags.jm_owner}}</span>
                     {{thelist.qrshare_product_name}}
                 </div>
                 <!-- 说明和运费 -->
@@ -52,9 +52,9 @@
                 <mt-popup v-model="display" position="bottom">
                     我是弹框
                 </mt-popup>
-                <div class="conments">
+                <!-- <div class="conments">
                     <p>买过的人这样说</p>
-                </div>
+                </div> -->
             </main>
             <footer>
 

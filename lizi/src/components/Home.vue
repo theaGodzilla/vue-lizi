@@ -21,6 +21,9 @@
           </div>
       </div>
     </div>
+    <div id="top" @click="toTop">
+      TOP
+    </div>
     <router-view/>
    
 
@@ -64,6 +67,9 @@ export default {
         // console.log(this.navs[0].id);
         // this.selected = this.navs[0].id;
       })
+    },
+    toTop(){
+      window.scrollTo(0,0);
     }
   },
   // beforeCreate() {
@@ -138,6 +144,22 @@ export default {
 }
 .mintui-search{
   font-size: rem(18px);
+}
+
+#top{
+  width: rem(45px);
+  height: rem(45px);
+  background: rgb(196, 193, 193);
+  opacity: .8;
+  color: #ff666b;
+  font-weight: 700;
+  text-align: center;
+  line-height: rem(45px);
+  border-radius: 50%;
+  border: 2px solid #ff666b;
+  position: fixed;
+  right: rem(10px);
+  bottom: rem(100px);
 }
 
 
