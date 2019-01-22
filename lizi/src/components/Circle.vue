@@ -200,6 +200,7 @@ body{
   font-size: rem(18px);
   font-weight: unset;
   background: #ff666b;
+      padding: 0 rem(10px);
 }
 .mintui-search {
   font-size: rem(18px);

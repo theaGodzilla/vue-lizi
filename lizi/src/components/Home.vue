@@ -99,18 +99,18 @@ export default {
 
 #header{
   position: relative;
-  height: rem(84px);
+  height: rem(82px);
 }
 
 #headerdiv{
-  height: rem(87px);
+  height: rem(82px);
   position: fixed;
   z-index: 1;
   width: 100%;
 }
 
 .heabottom{
-  height: rem(37px);
+  height: rem(34px);
   background: white;
   box-shadow: 1px 1px 1px #ccc;
   overflow-x: scroll;

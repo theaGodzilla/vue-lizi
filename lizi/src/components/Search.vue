@@ -54,6 +54,7 @@ export default {
     // font-weight: 700;
     font-size: rem(22px);
 }
+
 .mint-header{
     background: #ff666b;
     .mint-header-title{
@@ -61,25 +62,27 @@ export default {
     }
 }
 .search_form{
+    font-size: rem(12px);
     padding: rem(10px);
-    display: flex;
+    display: -webkit-box;
     .search{
         flex: 5;
-        height: rem(46px);
-        line-height: rem(40px);
+        height: rem(35px);
+        line-height: rem(35px);
         border-radius: rem(20px);
         color: #999;
         background: #f5f5f5;
         i{
+            font-size: rem(18px);
             margin: 0 rem(4px) 0 rem(10px);
-            line-height: rem(46px);
+            line-height: rem(35px);
         }
     }
     .search_btn{
         flex: 1;
         input{
             width: rem(55px);
-            height: rem(45px);
+            height: rem(35px);
             color: #999;
         }
     }

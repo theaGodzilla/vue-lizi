@@ -66,7 +66,7 @@ export default {
     },
 }
 </script>
-<style scoped lang="scss">
+<style  lang="scss">
     .input-group {
         width: 100%;
         height: 100%;
@@ -150,7 +150,7 @@ export default {
             }
             .bottom{
                 position: absolute;
-                bottom: rem(20px);
+                bottom: rem(50px);
                 width: 100%;
                 .btn{
                     width: 100%;

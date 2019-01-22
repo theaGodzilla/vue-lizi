@@ -317,7 +317,7 @@ export default {
     },
 }
 </script>
-<style scoped lang="scss">
+<style lang="scss">
     .lists {
         width: 100%;
         height: auto;
@@ -327,6 +327,50 @@ export default {
           font-size: rem(13px);
           font-weight: 100;
           margin-bottom: rem(10px);
+          display: flex;
+            #check {
+              display: inline-block;
+              border-radius: 50%;
+              width: rem(11px);
+              height: rem(11px);
+              text-align: center;
+              vertical-align: middle;
+              line-height: rem(12px);
+              position: relative;
+              margin-left: rem(10px);
+              top: rem(15px);
+              // float: left;
+              background: none;
+
+              &::before {
+                content: "";
+                position: absolute;
+                width: rem(13px) !important;
+                height: rem(13px) !important;
+                top: rem(-2px);
+                left: rem(-2px);
+                background: #fff;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                border: rem(1px) solid #7e7c7c;
+              }
+
+              &:checked::before {
+                content: "\2713";
+                background-color: #fff;
+                position: absolute;
+                top: rem(-2px);
+                left: rem(-2px);
+                width: 100%;
+                border: rem(1px) solid #e50232;
+                color: #e50232;
+                font-size: rem(20px);
+                border-radius: 50%;
+                font-weight: bold;
+              }
+
+              }
 
           .firstphoto {
             width: rem(60px);
@@ -337,11 +381,19 @@ export default {
           }
 
           .title {
-            width: 70%;
+            width: 60%;
             margin-left: rem(10px);
             float: left;
             font-size: rem(12px);
             padding-bottom: rem(10px);
+
+            p:nth-child(1){
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+            }
 
             p:nth-child(2) {
               width: fit-content;
@@ -422,7 +474,7 @@ export default {
                       border-radius: rem(5px);
                       padding: rem(5px) rem(10px) rem(5px)rem(10px);
                       outline: none;
-                      
+                      display: block
                     }
 
                     .btnchoosed {
@@ -432,6 +484,10 @@ export default {
                   }
 
 
+                }
+                li:nth-child(2){
+                  display: flex;
+                  flex-direction: column;
                 }
               }
 

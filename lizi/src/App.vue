@@ -1,14 +1,14 @@
 <template>
   <div id="App" class="container">
     <router-view />
-    <!-- <table class="floor">
+    <table class="floor">
       <tr>
         <td :style="{display:cartshow?'block':'none'}">
           <car-bottom />
         </td>
       </tr>
       <tr>
-        <td :style="{display:barshow?'block':'none'}"> -->
+        <td :style="{display:barshow?'block':'none'}">
         <footer>
           <mt-tabbar v-model="selected">
             <mt-tab-item :id="tab.name" v-for="tab in tabs" :key="tab.name" @click.native="goto(tab.path)">
@@ -18,9 +18,9 @@
           </mt-tabbar>
         </footer>
           
-        <!-- </td>
+        </td>
       </tr>
-    </table> -->
+    </table>
 
   </div>
 </template>
@@ -101,11 +101,11 @@ export default {
   },
   created(){
     // console.log(this.$route);
-    if( this.$route.name == 'Lizi' || 'Top' ){
-      this.selected = 'Home';
-    }else{
-      this.selected =this.$route.name;
-    }
+    // if( this.$route.name == 'Lizi' || 'Top' ){
+    //   this.selected = 'Home';
+    // }else{
+    //   this.selected =this.$route.name;
+    // }
     // console.log(this.$route)
       let path = this.$route.name;
       this.selected = path;
@@ -115,10 +115,13 @@ export default {
       } else {
         this.cartshow = false;
       }
-      if (this.$route.name === 'Login' || this.$route.name === 'Reg') {
+      if (this.$route.name === 'Login' || this.$route.name === 'Reg' || this.$route.name === 'Classify') {
         this.barshow = false;
       } else {
         this.barshow = true;
+      }
+       if (this.$route.name === 'Lizi' || this.$route.name === 'Top') {
+        this.selected = 'Home';
       }
 
   },
@@ -127,11 +130,14 @@ export default {
         // console.log(to.name);
         let path = to.name;
         this.selected = path;
-        if (to.name === 'Login' || to.name === 'Reg') {
+        if (to.name === 'Login' || to.name === 'Reg' || this.$route.name === 'Classify') {
           this.barshow = false;
         } else {
           this.barshow = true;
         }
+        if (to.name === 'Lizi' || to.name === 'Top') {
+          this.selected = 'Home';
+        } 
         if (to.name === 'Cart') {
           this.cartshow = true;
         } else {
@@ -192,58 +198,58 @@ body>div{height:100%;}
   }
 }
 
-  // .floor {
-  //   width: 100%;
-  //   // height: rem(80px);
-  //   height: auto;
-  //   overflow: hidden;
-  //   // display: flex;
-  //   position: fixed;
-  //   bottom: 0;
-  //   clear: both;
-  //   background: #fff;
-  //   border-collapse: collapse;
+  .floor {
+    width: 100%;
+    // height: rem(80px);
+    height: auto;
+    overflow: hidden;
+    // display: flex;
+    position: fixed;
+    bottom: 0;
+    clear: both;
+    background: #fff;
+    border-collapse: collapse;
 
-  //   tr {
-  //     width: 100%;
-  //     // height: 50%;
-  //     height: auto;
-  //     overflow: hidden;
-  //     margin: 0;
-  //     white-space: normal;
-  //     border-collapse: collapse;
-  //     border: none;
+    tr {
+      width: 100%;
+      // height: 50%;
+      height: auto;
+      overflow: hidden;
+      margin: 0;
+      white-space: normal;
+      border-collapse: collapse;
+      border: none;
 
-  //     td {
-  //       width: 100%;
-  //       // height: 50%;
-  //       height: auto;
-  //       overflow: hidden;
+      td {
+        width: 100%;
+        // height: 50%;
+        height: auto;
+        overflow: hidden;
 
-  //       .is-selected {
-  //         .mint-tab-item-label {
-  //           color: rgb(235, 88, 88)
-  //         }
-  //       }
+        .is-selected {
+          .mint-tab-item-label {
+            color: rgb(235, 88, 88)
+          }
+        }
 
-  //       .mint-tabbar {
-  //         // position: fixed;
-  //         height: auto;
-  //         overflow: hidden;
-  //         position: inherit;
-  //       }
+        .mint-tabbar {
+          // position: fixed;
+          height: auto;
+          overflow: hidden;
+          position: inherit;
+        }
 
 
-  //       .mint-tab-item-label {
-  //         font-size: rem(12px);
+        .mint-tab-item-label {
+          font-size: rem(12px);
 
-  //         .iconfont {
-  //           font-size: rem(18px);
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+          .iconfont {
+            font-size: rem(18px);
+          }
+        }
+      }
+    }
+  }
 
 </style>
 

@@ -130,7 +130,8 @@
 
 <style lang="scss" >
   .page {
-
+    display: flex;
+    flex-direction: column;
     .cli-search {
       width: 100%;
       // height: 20%;
@@ -181,8 +182,10 @@
     }
 
     .center {
-      height: 78%;
-      margin-top: rem(2px);
+      // height: 78%;
+      flex: 1;
+      overflow: hidden;
+      // margin-top: rem(2px);
       background: #fff;
 
       .mint-tab-container {
@@ -238,6 +241,9 @@
 
             .mint-indexlist{
               height: 100%;
+              .mint-indexlist-navitem{
+                padding: 0 rem(6px);
+              }
             }
           }
 

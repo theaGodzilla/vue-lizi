@@ -21,7 +21,7 @@
                             <p class="name">{{item.name}}</p>
                             <p class="price">
                                 <span class="new">￥{{item.jumei_price}}</span>
-                                <!-- <del class="old" :style="display:item.market_price?block:none">￥{{item.market_price}}</del> -->
+                                <del class="old" :style="{display:item.market_price?'block':'none'}">￥{{item.market_price}}</del>
                             </p>
                             <p class="sale"></p>
                         </div>
@@ -73,14 +73,17 @@ export default {
 }
 #header{
     display: flex;
-    height: rem(48px);
+    height: rem(45px);
     background: #ff666b;
-    line-height: rem(48px);
+    // line-height: rem(45px);
+    font-size: rem(17px);
     a{
         flex: 1;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color:white;
-        text-align: center;
+        // text-align: center;
         i{
             font-size: rem(25px);
         }
@@ -88,12 +91,14 @@ export default {
     div{
         flex: 5;
         text-align: center;
+            display: flex;
+    align-items: center;
         input{
         background: white;
         border-radius: rem(10px);
         padding: 0 rem(44px) 0 rem(10px);
         // width: 100%;
-        height: rem(32px);
+        height: rem(30px);
         }
     }
 }
@@ -127,20 +132,29 @@ export default {
                         font-size: rem(15px);
                         // line-height: rem(18px);
                         margin-bottom: rem(15px);
-                        height: rem(35px);
+                        // height: rem(35px);
                         overflow: hidden;
-                        font-size: rem(16px);
-                        line-height: rem(19px);
+                        font-size: rem(15px);
+                        // line-height: rem(19px);
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
                     }
                     .price{
+                        display: flex;
+                        align-items: center;
+                        margin-top: rem(20px);
                         span{
                             font-size: rem(16px);
                             margin-right: rem(10px);
+                            color: #ff666b;
                         }
-                        // del{
-                        //     font-size: rem(12px);
-                        //     color: #999;
-                        // }
+                        del{
+                            font-size: rem(12px);
+                            color: #999;
+                        }
                     }
                     .sale{
 
