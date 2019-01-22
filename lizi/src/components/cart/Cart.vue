@@ -25,6 +25,14 @@
 
   import CartList from './CartList';
   export default {
+    data(){
+      return {
+        turecheck:false,
+      }
+    },
+    created(){
+      
+    },
     
     components: {
       CartList,

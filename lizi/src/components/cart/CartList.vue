@@ -33,13 +33,14 @@
               <b class="close" @click="closed">×</b>
             </mt-popup>
             <div class="controlnum">
-              <span class="sub">-</span>
+              <span class="sub" @click="reducenum()">-</span>
               <textarea class="num">1</textarea>
-              <span class="plus">+</span>
+              <span class="plus" @click="addnum()">+</span>
             </div>
           </div>
         </li>
-        <li>
+        
+        <!-- <li>
           <input type="checkbox" name="" id="check">
           <label for="check"></label>
           <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
@@ -60,8 +61,6 @@
                 </li>
                 <li>
                   <p class="content">化妆品净含量</p>
-                  <!-- <button :class="{cbtn1:obtn1,sbtn1:nbtn1}" @click="btnchoose01">125ml</button>
-                  <button :class="{cbtn2:obtn2,sbtn2:nbtn2}" @click="btnchoose02">250ml</button> -->
                   <div>
                     <input type="button" value="125ml" class="btn1">
                   </div>
@@ -79,211 +78,7 @@
               <span class="plus">+</span>
             </div>
           </div>
-        </li>
-        <li>
-          <input type="checkbox" name="" id="check">
-          <label for="check"></label>
-          <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
-          <div class="title">
-            <p>2018新款韩范李玲系带百搭纯色长袖宽松衬衫女</p>
-            <p :class="popupVisible" @click="popups">Lffffffff <b>∨</b>
-            </p>
-            <p class="product-price">￥145</p>
-            <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
-              <ul>
-                <li>
-                  <img class="secondphoto" src="@img/photo.jpg" alt="" srcset="">
-                  <div class="popuptip">
-                    <p class="price">￥475</p>
-                    <p class="invertory">库存198件</p>
-                    <p class="choose">已选："l25ml"</p>
-                  </div>
-                </li>
-                <li>
-                  <p class="content">化妆品净含量</p>
-                  <!-- <button :class="{cbtn1:obtn1,sbtn1:nbtn1}" @click="btnchoose01">125ml</button>
-                  <button :class="{cbtn2:obtn2,sbtn2:nbtn2}" @click="btnchoose02">250ml</button> -->
-                  <div>
-                    <input type="button" value="125ml" class="btn1">
-                  </div>
-                </li>
-              </ul>
-              <div class="popupbar">
-                <span class="btn-sure">确定</span>
-                <span class="btn-detail">查看详情</span>
-              </div>
-              <b class="close" @click="closed">×</b>
-            </mt-popup>
-            <div class="controlnum">
-              <span class="sub">-</span>
-              <textarea class="num">1</textarea>
-              <span class="plus">+</span>
-            </div>
-          </div>
-        </li>
-        <li>
-          <input type="checkbox" name="" id="check">
-          <label for="check"></label>
-          <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
-          <div class="title">
-            <p>2018新款韩范李玲系带百搭纯色长袖宽松衬衫女</p>
-            <p :class="popupVisible" @click="popups">Lffffffff <b>∨</b>
-            </p>
-            <p class="product-price">￥145</p>
-            <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
-              <ul>
-                <li>
-                  <img class="secondphoto" src="@img/photo.jpg" alt="" srcset="">
-                  <div class="popuptip">
-                    <p class="price">￥475</p>
-                    <p class="invertory">库存198件</p>
-                    <p class="choose">已选："l25ml"</p>
-                  </div>
-                </li>
-                <li>
-                  <p class="content">化妆品净含量</p>
-                  <!-- <button :class="{cbtn1:obtn1,sbtn1:nbtn1}" @click="btnchoose01">125ml</button>
-                  <button :class="{cbtn2:obtn2,sbtn2:nbtn2}" @click="btnchoose02">250ml</button> -->
-                  <div>
-                    <input type="button" value="125ml" class="btn1">
-                  </div>
-                </li>
-              </ul>
-              <div class="popupbar">
-                <span class="btn-sure">确定</span>
-                <span class="btn-detail">查看详情</span>
-              </div>
-              <b class="close" @click="closed">×</b>
-            </mt-popup>
-            <div class="controlnum">
-              <span class="sub">-</span>
-              <textarea class="num">1</textarea>
-              <span class="plus">+</span>
-            </div>
-          </div>
-        </li>
-        <li>
-          <input type="checkbox" name="" id="check">
-          <label for="check"></label>
-          <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
-          <div class="title">
-            <p>2018新款韩范李玲系带百搭纯色长袖宽松衬衫女</p>
-            <p :class="popupVisible" @click="popups">Lffffffff <b>∨</b>
-            </p>
-            <p class="product-price">￥145</p>
-            <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
-              <ul>
-                <li>
-                  <img class="secondphoto" src="@img/photo.jpg" alt="" srcset="">
-                  <div class="popuptip">
-                    <p class="price">￥475</p>
-                    <p class="invertory">库存198件</p>
-                    <p class="choose">已选："l25ml"</p>
-                  </div>
-                </li>
-                <li>
-                  <p class="content">化妆品净含量</p>
-                  <!-- <button :class="{cbtn1:obtn1,sbtn1:nbtn1}" @click="btnchoose01">125ml</button>
-                  <button :class="{cbtn2:obtn2,sbtn2:nbtn2}" @click="btnchoose02">250ml</button> -->
-                  <div>
-                    <input type="button" value="125ml" class="btn1">
-                  </div>
-                </li>
-              </ul>
-              <div class="popupbar">
-                <span class="btn-sure">确定</span>
-                <span class="btn-detail">查看详情</span>
-              </div>
-              <b class="close" @click="closed">×</b>
-            </mt-popup>
-            <div class="controlnum">
-              <span class="sub">-</span>
-              <textarea class="num">1</textarea>
-              <span class="plus">+</span>
-            </div>
-          </div>
-        </li>
-        <li>
-          <input type="checkbox" name="" id="check">
-          <label for="check"></label>
-          <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
-          <div class="title">
-            <p>2018新款韩范李玲系带百搭纯色长袖宽松衬衫女</p>
-            <p :class="popupVisible" @click="popups">Lffffffff <b>∨</b>
-            </p>
-            <p class="product-price">￥145</p>
-            <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
-              <ul>
-                <li>
-                  <img class="secondphoto" src="@img/photo.jpg" alt="" srcset="">
-                  <div class="popuptip">
-                    <p class="price">￥475</p>
-                    <p class="invertory">库存198件</p>
-                    <p class="choose">已选："l25ml"</p>
-                  </div>
-                </li>
-                <li>
-                  <p class="content">化妆品净含量</p>
-                  <!-- <button :class="{cbtn1:obtn1,sbtn1:nbtn1}" @click="btnchoose01">125ml</button>
-                  <button :class="{cbtn2:obtn2,sbtn2:nbtn2}" @click="btnchoose02">250ml</button> -->
-                  <div>
-                    <input type="button" value="125ml" class="btn1">
-                  </div>
-                </li>
-              </ul>
-              <div class="popupbar">
-                <span class="btn-sure">确定</span>
-                <span class="btn-detail">查看详情</span>
-              </div>
-              <b class="close" @click="closed">×</b>
-            </mt-popup>
-            <div class="controlnum">
-              <span class="sub">-</span>
-              <textarea class="num">1</textarea>
-              <span class="plus">+</span>
-            </div>
-          </div>
-        </li><li>
-          <input type="checkbox" name="" id="check">
-          <label for="check"></label>
-          <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
-          <div class="title">
-            <p>2018新款韩范李玲系带百搭纯色长袖宽松衬衫女</p>
-            <p :class="popupVisible" @click="popups">Lffffffff <b>∨</b>
-            </p>
-            <p class="product-price">￥145</p>
-            <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
-              <ul>
-                <li>
-                  <img class="secondphoto" src="@img/photo.jpg" alt="" srcset="">
-                  <div class="popuptip">
-                    <p class="price">￥475</p>
-                    <p class="invertory">库存198件</p>
-                    <p class="choose">已选："l25ml"</p>
-                  </div>
-                </li>
-                <li>
-                  <p class="content">化妆品净含量</p>
-                  <!-- <button :class="{cbtn1:obtn1,sbtn1:nbtn1}" @click="btnchoose01">125ml</button>
-                  <button :class="{cbtn2:obtn2,sbtn2:nbtn2}" @click="btnchoose02">250ml</button> -->
-                  <div>
-                    <input type="button" value="125ml" class="btn1">
-                  </div>
-                </li>
-              </ul>
-              <div class="popupbar">
-                <span class="btn-sure">确定</span>
-                <span class="btn-detail">查看详情</span>
-              </div>
-              <b class="close" @click="closed">×</b>
-            </mt-popup>
-            <div class="controlnum">
-              <span class="sub">-</span>
-              <textarea class="num">1</textarea>
-              <span class="plus">+</span>
-            </div>
-          </div>
-        </li>
+        </li> -->
       </ul>
     </div>
 </template>
@@ -313,7 +108,30 @@ export default {
       btnchoose02() {
         this.obtn2 = false;
         this.nbtn2 = true;
-      }
+      },
+      //加数量
+      addnum(){
+        // console.log(666);
+        let val1 =  $('.plus').prev().val();
+        val1++;
+        // console.log(val1);
+        $('.plus').prev().val(val1);
+      },
+      //减数量
+      reducenum(){
+        let val1 =  $('.sub').next().val();
+        if( val1<=1 ){
+          val1=1;
+        }else{
+          val1--;
+        }
+        // console.log(val1);
+        $('.sub').next().val(val1);
+      },
+      //全选
+      // Allelection(){
+
+      // }
     },
 }
 </script>
