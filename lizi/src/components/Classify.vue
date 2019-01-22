@@ -128,7 +128,7 @@
 
 </script>
 
-<style scoped lang="scss" >
+<style lang="scss" >
   .page {
 
     .cli-search {
@@ -165,13 +165,17 @@
 
         .mint-tab-item-label {
           font-size: rem(16px);
+
         }
 
         .is-selected {
-          color: #fff;
+          // color: #fff;
           border-bottom: 3px solid #fff;
-          text-decoration: underline;
+          // text-decoration: underline;
           margin-bottom: 0;
+          .mint-tab-item-label{
+            color: white;
+          }
         }
       }
     }

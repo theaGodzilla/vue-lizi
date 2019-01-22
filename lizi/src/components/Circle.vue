@@ -36,8 +36,8 @@
             <div class="info">
               <p class="name">{{item.middle_name}}</p>
               <p class="price">
-                <span class="now">{{item.jumei_price}}</span>
-                <del class="old">{{item.market_price}}</del>
+                <span class="now">￥{{item.jumei_price}}</span>
+                <del class="old" :style="{display:item.market_price?'block':'none'}">￥{{item.market_price}}</del>
               </p>
               <p class="sale">{{item.product_desc}}
                 <i class="iconfontfa fa-shopping-bag" aria-hidden="true"></i>
@@ -247,18 +247,32 @@ body{
           float: left;
           .name{
             font-size: rem(15px);
+            // text-overflow: ellipsis;
+            overflow: hidden;
+            height: rem(40px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
           }
           .price{
             height: rem(30px);
+            line-height: rem(30px);
+            display: flex;
+            
             .now{
               font-size: rem(15px);
+              color: #ff666b;
             }
             .old{
-              font-size: rem(14px);
+              margin-left: rem(10px);
+              font-size: rem(12px);
+              color: gray;
             }
           }
           .sale{
-            font-size: rem(15px);
+            font-size: rem(14px);
           }
         }
       }

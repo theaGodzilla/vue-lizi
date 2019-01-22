@@ -90,10 +90,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#Home{
-  display: flex;
-  flex-direction: column;
-}
 #Mian{
   flex: 1;
 }
