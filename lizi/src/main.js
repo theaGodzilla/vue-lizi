@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import $ from 'jquery';
 
 import "./assets/font01/iconfont.css";
 import "./assets/font01/iconfont.js";

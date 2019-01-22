@@ -3,8 +3,8 @@
         <div id="page">
             <header>
                 <mt-header :title="lists.short_name">
-                    <mt-button icon="back" slot="left"></mt-button>
-                    <mt-button class="iconfont icon-shouye" slot="right"></mt-button>
+                    <mt-button icon="back" slot="left" @click="$router.back(-1)"></mt-button>
+                    <mt-button class="iconfont icon-shouye" slot="right" @click="to('Home')"></mt-button>
                 </mt-header>
             </header>
             <main>
@@ -74,7 +74,10 @@ export default {
     methods:{
         goto(){
             this.display = !this.display;
-        }
+        },
+        to(name){
+             this.$router.push({path:name})
+        },
     },
     created(){
         // console.log(this.$route);

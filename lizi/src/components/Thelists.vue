@@ -1,9 +1,9 @@
 <template>
     <div id="page">
         <div id="header">
-            <a href="javascript:;"><i class="iconfont icon-chakantiezifenxiang"></i></a>
+            <a href="javascript:;" @click="$router.back(-1)"><i class="iconfont icon-chakantiezifenxiang"></i></a>
             <div><input type="text" v-model="key"></div>
-            <a href="javascript:;"><i class="iconfont icon-shouye"></i></a>
+            <a href="javascript:;" @click="to('Home')"><i class="iconfont icon-shouye"></i></a>
         </div>
         <!-- <mt-navbar v-model="selected">
             <mt-tab-item :id="1">选项一</mt-tab-item>
@@ -35,6 +35,9 @@
                 </li>
             </ul>
         </div>
+        <div id="top" @click="toTop">
+            TOP
+        </div>
     </div>
 </template>
 <script>
@@ -54,6 +57,12 @@ export default {
             // console.log(this.$router);
             this.$router.push({path:name,query:{id:id.item_id,type:id.type}})
         },
+        to(name){
+             this.$router.push({path:name})
+        },
+        toTop(){
+            window.scrollTo(0,0);
+        }
     },
     created() {
         // bus.$off('keyword');
@@ -86,7 +95,7 @@ export default {
                     .get(`/api/search/index?search=${arg}&page=${this.page}&ajax=get`)
                     .then(res=>{
                         console.log(res.data.data.item_list.length);
-                        if(res.data.data.item_list.length){
+                        if(res.data.data.item_list.length==0){
                             return false;
                         }
                         // this.lists += res.data.data.item_list;
@@ -220,4 +229,20 @@ export default {
     }
 }
 
+#top{
+  width: rem(45px);
+  height: rem(45px);
+  background: rgb(196, 193, 193);
+  opacity: .8;
+  color: #ff666b;
+  font-weight: 700;
+  text-align: center;
+  line-height: rem(45px);
+  border-radius: 50%;
+  border: 2px solid #ff666b;
+  position: fixed;
+  right: rem(10px);
+  bottom: rem(100px);
+  font-size: rem(15px);
+}
 </style>
