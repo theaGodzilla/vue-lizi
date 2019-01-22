@@ -68,6 +68,9 @@
 </script>
 
 <style scoped lang="scss">
+.page{
+  background: #ecebeb;
+
   .cart_page {
     width: 100%;
     height: auto;
@@ -208,6 +211,6 @@
         }
       }
     }
-  
+}  
 
 </style>

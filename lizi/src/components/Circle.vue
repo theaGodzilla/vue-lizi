@@ -86,7 +86,7 @@ export default {
       // console.log(this.$router);
     },
     getdata() {
-      this.$axios.get("/dbapi/getIndexNavigator?_=1547221028227").then(res => {
+      this.$axios.get("http://localhost:17171/proxy/Circledatas?_=1547221028227").then(res => {
         // console.log(res.data.model);
         this.navs = res.data.model.list;
         // console.log(this.navs);
