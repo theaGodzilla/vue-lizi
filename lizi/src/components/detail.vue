@@ -55,6 +55,9 @@
                 <!-- <div class="conments">
                     <p>买过的人这样说</p>
                 </div> -->
+                <div class="det">
+                    <img :src="thelist.description_url_set.detail[480]" alt="">
+                </div>
             </main>
             <footer>
 
@@ -131,7 +134,7 @@ export default {
                 }
             }
             .slide-left-icon{
-                width: rem(61px);
+                width: rem(60px);
                 height: rem(49px);
                 position: absolute;
                 top: 0;

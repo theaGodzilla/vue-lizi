@@ -127,6 +127,11 @@ export default {
 </script>
 <style scoped lang="scss">
 //轮播图
+.mint-swipe-indicators{
+  .is-active{
+    color: red;
+  }
+}
 #banner{
   height: rem(201px);
   img{

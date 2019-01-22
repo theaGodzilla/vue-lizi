@@ -2,7 +2,7 @@
     <div>
         <ul class="lists">
         <li>
-          <input type="checkbox" name="" id="check">
+          <input type="checkbox" name="" id="check" :key="0" class="checklist">
           <label for="check"></label>
           <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
           <div class="title">
@@ -33,15 +33,15 @@
               <b class="close" @click="closed">×</b>
             </mt-popup>
             <div class="controlnum">
-              <span class="sub" @click="reducenum()">-</span>
+              <span class="sub" @click="reducenum(0)">-</span>
               <textarea class="num">1</textarea>
-              <span class="plus" @click="addnum()">+</span>
+              <span class="plus" @click="addnum(0)">+</span>
             </div>
           </div>
         </li>
         
-        <!-- <li>
-          <input type="checkbox" name="" id="check">
+        <li>
+          <input type="checkbox" name="" id="check" :key="1" class="checklist">
           <label for="check"></label>
           <img class="firstphoto" src="@img/photo.jpg" alt="" srcset="">
           <div class="title">
@@ -73,16 +73,17 @@
               <b class="close" @click="closed">×</b>
             </mt-popup>
             <div class="controlnum">
-              <span class="sub">-</span>
+              <span class="sub" @click="reducenum(1)">-</span>
               <textarea class="num">1</textarea>
-              <span class="plus">+</span>
+              <span class="plus" @click="addnum(1)">+</span>
             </div>
           </div>
-        </li> -->
+        </li>
       </ul>
     </div>
 </template>
 <script>
+import bus from '../../assets/js/eventBus.js';
 export default {
         data() {
       return {
@@ -110,29 +111,56 @@ export default {
         this.nbtn2 = true;
       },
       //加数量
-      addnum(){
+      addnum(key){
         // console.log(666);
-        let val1 =  $('.plus').prev().val();
+        console.log( $('.plus').eq(key));
+        let val1 =  $('.plus').eq(key).prev().val();
         val1++;
         // console.log(val1);
-        $('.plus').prev().val(val1);
+        $('.plus').eq(key).prev().val(val1);
       },
       //减数量
-      reducenum(){
-        let val1 =  $('.sub').next().val();
+      reducenum(key){
+        let val1 =  $('.sub').eq(key).next().val();
         if( val1<=1 ){
           val1=1;
         }else{
           val1--;
         }
         // console.log(val1);
-        $('.sub').next().val(val1);
+        $('.sub').eq(key).next().val(val1);
       },
-      //全选
-      // Allelection(){
-
-      // }
     },
+    created(){
+      //店铺全选
+      bus.$off('allshop');
+      bus.$on('allshop',target=>{
+        // console.log(target);
+        if(target){
+          // console.log(target);
+          $('.checklist').prop('checked','checked');
+          console.log($('.checklist'));
+        }else{
+          // console.log(target);
+          $('.checklist').prop('checked',false);
+        }
+      })
+
+      //大全选
+      bus.$off('bigcheck');
+      bus.$on('bigcheck',checktar=>{
+        console.log(checktar);
+        if(checktar){
+          // console.log($('.checklist'));
+           $('.checklist').prop('checked','checked');
+        }else{
+          // console.log(target);
+          $('.checklist').prop('checked',false);
+        }
+        
+      })
+      
+    }
 }
 </script>
 <style lang="scss">

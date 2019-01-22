@@ -118,7 +118,7 @@ export default {
       if (
       this.$route.name === 'Login' || this.$route.name === 'Reg' || 
       this.$route.name === 'Classify' || this.$route.name === 'Circle' ||
-      this.$route.name === 'Thelists'
+      this.$route.name === 'Thelists' || this.$route.name === 'Detail'
       ) {
         this.barshow = false;
       } else {
@@ -136,7 +136,7 @@ export default {
         this.selected = path;
         if (to.name === 'Login' || to.name === 'Reg' || 
         this.$route.name === 'Classify' || this.$route.name === 'Circle' ||
-        this.$route.name === 'Thelists'
+        this.$route.name === 'Thelists' || this.$route.name === 'Detail'
         ) {
           this.barshow = false;
         } else {

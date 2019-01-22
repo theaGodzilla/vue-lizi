@@ -2,7 +2,7 @@
   <!-- <div class="f_page"> -->
     <div class="cartbottom">
      <div class="left">
-        <input type="checkbox" class="check" name="" id="check">
+        <input type="checkbox" class="bigcheck" name="" @click="allche">
         <label for="check"></label>
         <span class="allchecked">全选</span>
      </div>
@@ -15,8 +15,20 @@
   <!-- </div> -->
 </template>
 <script>
+import bus from '../../assets/js/eventBus.js';
   export default {
-    
+    data(){
+      return {
+
+      }
+    },
+    methods:{
+      allche(){
+        // console.log($('.bigcheck').prop('checked'));
+        var checkok = $('.bigcheck').prop('checked');
+        bus.$emit('bigcheck',checkok);
+      }
+    },
   }
 
 </script>
@@ -49,7 +61,7 @@
       flex: 1;
       width: 55%;
       display: flex;
-      .check {
+      .bigcheck {
         display: inline-block;
         border-radius: 50%;
         width: rem(11px);

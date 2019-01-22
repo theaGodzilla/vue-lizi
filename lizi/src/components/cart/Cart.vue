@@ -5,7 +5,7 @@
       </mt-header>
       <div class="cart-center">
         <div class="store">
-          <input type="checkbox" name="" id="check">
+          <input type="checkbox" name="" class="checkdian" id="check" @click="all">
           <label for="check"></label>
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-dianpu1"></use>
@@ -22,16 +22,41 @@
 </template>
 
 <script>
-
+  import bus from '../../assets/js/eventBus.js';
   import CartList from './CartList';
   export default {
     data(){
       return {
-        turecheck:false,
+        // turecheck:false,
+      }
+    },
+    methods:{
+      all(){
+        // this.turecheck = !this.turecheck;
+        // console.log($('#check').prop('checked'));
+        var allshop = $('#check').prop('checked');
+        // if( allshop ){
+          bus.$emit('allshop',allshop);
+        // }else{
+          // bus.$emit('allshop',this.turecheck);
+        // }
       }
     },
     created(){
-      
+      //大全选
+      // bus.$off('bigcheck');
+      bus.$on('bigcheck',checktar=>{
+        console.log(checktar);
+        console.log(666);
+        // if(checktar){
+        //   console.log($('.checkdian'));
+        //    $('.checkdian').prop('checked',true);
+        // }else{
+        //   console.log($('.checkdian'));
+        //   $('.checkdian').prop('checked',false);
+        // }
+        
+      })
     },
     
     components: {
