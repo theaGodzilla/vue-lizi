@@ -12,7 +12,7 @@
         </mt-navbar> -->
         <div id="Main">
             <ul>
-                <li v-for="item in lists" :key="item.item_id" :id="item.item_id">
+                <li v-for="(item,idx) in lists" :key="idx" :id="item.item_id">
                     <a href="javascript:;" @click="goto('Detail',item)">
                         <div class="img_div">
                             <img :src="item.original_image" alt="">
@@ -54,9 +54,6 @@ export default {
             // console.log(this.$router);
             this.$router.push({path:name,query:{id:id.item_id,type:id.type}})
         },
-        // xios(){
-            
-        // }
     },
     created() {
         // bus.$off('keyword');
@@ -74,9 +71,31 @@ export default {
             })
 
             //懒加载
-            window.onscroll=function(){
-                console.log(document.body.scrollWidth);
-                console.log(document.body.scrollHeight);
+            window.onscroll=()=>{
+                // console.log('scrollHeight:'+document.body.scrollHeight);//html页面全文总高度
+                var scrollHeight = document.body.scrollHeight;
+                // console.log('innerHeight:'+window.innerHeight );//可视页面的高度
+                var innerHeight = window.innerHeight;
+                // console.log('scrollY:'+window.scrollY);//window滚动的距离
+                var scrollY = +window.scrollY;
+                var hei = innerHeight+scrollY;
+                if( hei==scrollHeight ){
+                    this.page++;
+                    console.log(this.page);
+                    this.$axios
+                    .get(`/api/search/index?search=${arg}&page=${this.page}&ajax=get`)
+                    .then(res=>{
+                        console.log(res.data.data.item_list.length);
+                        if(res.data.data.item_list.length){
+                            return false;
+                        }
+                        // this.lists += res.data.data.item_list;
+                        this.lists = this.lists.concat(res.data.data.item_list);
+                        console.log(this.lists);
+                    })
+                    //Duplicate keys detected: '1602226'. This may cause an update error.
+
+                }
             }
         // })
     },
