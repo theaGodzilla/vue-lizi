@@ -121,7 +121,7 @@ export default {
             position: relative;
             .main-img{
                  width: 100%;
-                height: rem(380px);
+                height: rem(320px);
                 img{
                     width: 100%;
                     height: 100%;
@@ -165,11 +165,12 @@ export default {
             .cur_num{
                 float: right;
                 line-height: rem(33px);
+                font-size: 13px;
             }
         }
         .normal_desc{
-            line-height: rem(26px);
-            padding: rem(15px) rem(14px) rem(10px) rem(14px);
+            // line-height: rem(26px);
+            padding: rem(10px) rem(14px) rem(10px) rem(14px);
             // line-height: rem(12px);
             font-size: rem(15px);
             // width: 20rem;
@@ -189,6 +190,7 @@ export default {
         }
         .additional-info{
             padding: 0 rem(14px) rem(10px) rem(14px);
+            font-size: 13px;
             label{
                 line-height: rem(13px);
                 width: 22%;
@@ -203,6 +205,7 @@ export default {
             .postage-wrap{
                 border-bottom: 1px solid #eee;
                 padding: rem(8px) 0;
+                font-size: rem(13px);
             }
             .introduction-wrap{
                 padding: rem(8px) 0;

@@ -115,7 +115,7 @@ export default {
       } else {
         this.cartshow = false;
       }
-      if (this.$route.name === 'Login' || this.$route.name === 'Reg' || this.$route.name === 'Classify') {
+      if (this.$route.name === 'Login' || this.$route.name === 'Reg' || this.$route.name === 'Classify' || this.$route.name === 'Circle') {
         this.barshow = false;
       } else {
         this.barshow = true;
@@ -130,7 +130,7 @@ export default {
         // console.log(to.name);
         let path = to.name;
         this.selected = path;
-        if (to.name === 'Login' || to.name === 'Reg' || this.$route.name === 'Classify') {
+        if (to.name === 'Login' || to.name === 'Reg' || this.$route.name === 'Classify' || this.$route.name === 'Circle') {
           this.barshow = false;
         } else {
           this.barshow = true;

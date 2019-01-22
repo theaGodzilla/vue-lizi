@@ -90,6 +90,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.page{
+      display: block;
+}
 #Mian{
   flex: 1;
 }

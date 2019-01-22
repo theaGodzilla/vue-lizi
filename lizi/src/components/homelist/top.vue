@@ -6,13 +6,13 @@
                 <li v-for="item in Mainlist" :key="item.id">
                     <a href="">
                         <img :src="getImage(item.pic)" alt="">
-                        <div>
+                        <div class="info">
                             <h2>{{item.title}}</h2>
                             <p>
                                 <span class="sale">已售出：{{item.salesCount}}</span>
                                 <span class="oldprice">市场价：{{item.marketPrice}}</span>
                             </p>
-                            <div><span>￥{{item.liziPrice}}</span><i class="iconfont icon-gouwu"></i></div>
+                            <div class="price"><span>￥{{item.liziPrice}}</span><i class="iconfont icon-gouwu"></i></div>
                         </div>
                     </a>
                     
@@ -84,16 +84,16 @@ export default {
                 display: flex;
                 color: #333;
                 img{
-                    width: rem(115px);
-                    height: rem(115px);
+                    width: rem(100px);
+                    height: rem(100px);
                     // float: left;
                 }
-                div{
+                .info{
                     // float: left;
                     flex: 1;
                     padding: rem(7px);
                     h2{
-                        height: rem(40px);
+                        height: rem(35px);
                         overflow: hidden;
                         padding: rem(5px) 0;
                         font-size: rem(12px);
@@ -108,11 +108,13 @@ export default {
                             color: gray;
                         }
                     }
-                    div{
+                    .price{
                         display: flex;
+                        padding-top: rem(5px);
                         span{
                             flex: 1;
                             color: #fd686e;
+                            font-size: rem(16px);
                         }
                         i{
                             flex: 1;

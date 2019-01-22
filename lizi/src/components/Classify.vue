@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="cli-search">
-      <mt-cell to=''>
+      <mt-cell to='/Search'>
         <span class="search-mer">
           <i class="iconfont icon-sousuo"></i>
           搜索品牌/商品

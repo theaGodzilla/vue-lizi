@@ -17,13 +17,19 @@
                         <div class="img_div">
                             <img :src="item.original_image" alt="">
                         </div>
+                        <div class="little_icon" :style="{display:item.brand_logo.logo_url?'flex':'none'}">
+                            <img :src="item.brand_logo.logo_url" alt="">
+                        </div>
                         <div class="lis_main">
                             <p class="name">{{item.name}}</p>
                             <p class="price">
                                 <span class="new">￥{{item.jumei_price}}</span>
                                 <del class="old" :style="{display:item.market_price?'block':'none'}">￥{{item.market_price}}</del>
                             </p>
-                            <p class="sale"></p>
+                            <p class="sale">
+                                <span>{{item.product_desc}}</span>
+                                <i class="iconfont icon-gouwu"></i>
+                            </p>
                         </div>
                     </a>
                 </li>
@@ -39,14 +45,18 @@ export default {
             // props:['keyword'],
             selected:'',
             key:'',
-            lists:[]
+            lists:[],
+            page:1
         }
     },
     methods:{
         goto(name,id){
             // console.log(this.$router);
             this.$router.push({path:name,query:{id:id.item_id,type:id.type}})
-        }
+        },
+        // xios(){
+            
+        // }
     },
     created() {
         // bus.$off('keyword');
@@ -56,12 +66,18 @@ export default {
             console.log(arg);
             this.key = arg;
             // console.log(arg);
-            this.$axios.get(`/api/search/index?search=${arg}&ajax=get`)
+            this.$axios.get(`/api/search/index?search=${arg}&page=${this.page}&ajax=get`)
             .then(res=>{
                 // console.log(res);
                 this.lists = res.data.data.item_list;
                 console.log(this.lists);
             })
+
+            //懒加载
+            window.onscroll=function(){
+                console.log(document.body.scrollWidth);
+                console.log(document.body.scrollHeight);
+            }
         // })
     },
     
@@ -110,8 +126,9 @@ export default {
             margin-top: rem(10px);
             position: relative;
             background-color: #fff;
-            padding: rem(10px);
+            // padding: rem(10px);
             border-bottom: 1px solid #ccc;
+
             a{
                 display: -webkit-box;
                 width: 100%;
@@ -126,13 +143,22 @@ export default {
                         height: 100%;
                     }
                 }
+                .little_icon{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    img{
+                        width: rem(15px);
+                        height: rem(15px);
+                    }
+                }
                 .lis_main{
                     -webkit-box-flex: 1;
                     .name{
                         font-size: rem(15px);
-                        // line-height: rem(18px);
-                        margin-bottom: rem(15px);
-                        // height: rem(35px);
+                        // line-height: rem(40px);
+                        margin-bottom: rem(8px);
+                        height: rem(40px);
                         overflow: hidden;
                         font-size: rem(15px);
                         // line-height: rem(19px);
@@ -145,7 +171,7 @@ export default {
                     .price{
                         display: flex;
                         align-items: center;
-                        margin-top: rem(20px);
+                        margin-top: rem(8px);
                         span{
                             font-size: rem(16px);
                             margin-right: rem(10px);
@@ -157,7 +183,17 @@ export default {
                         }
                     }
                     .sale{
-
+                        font-size: rem(14px);
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: rem(8px);
+                        span{
+                            flex: 1;
+                        }
+                        .icon-gouwu{
+                            flex: 1;
+                            text-align: right;
+                        }
                     }
                 }
             }

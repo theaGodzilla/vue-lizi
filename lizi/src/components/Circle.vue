@@ -31,7 +31,10 @@
         <li v-for="item in goodslist" :key="item.goods_id">
           <a href="#">
             <div class="pic">
-              <img :src="item.image_url_set.dx_image[320]">
+              <img :src="item.original_image">
+            </div>
+            <div class="pic_little" :style="{display:item.brand_logo.logo_url?'flex':'none'}">
+              <img :src="item.brand_logo.logo_url" alt="">            
             </div>
             <div class="info">
               <p class="name">{{item.middle_name}}</p>
@@ -227,6 +230,7 @@ body{
       margin-bottom: rem(10px);
       // background: white;
       border-bottom: 1px solid #ddd;
+      position: relative;
       a{
         overflow: hidden;
         display: flex;
@@ -239,6 +243,18 @@ body{
           img{
             width: rem(90px);
             height: rem(90px);
+          }
+        }
+        .pic_little{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: rem(15px);
+            height: rem(15px);
+            display: flex;
+          img{
+            width: 100%;
+            height: 100%;
           }
         }
         .info {
