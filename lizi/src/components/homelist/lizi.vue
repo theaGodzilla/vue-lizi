@@ -63,7 +63,7 @@
         </ul>
         </div>
 
-        <h1>丽子</h1>
+        <!-- <h1>丽子</h1> -->
         <router-view/>
     </div>
 </template>
@@ -125,7 +125,7 @@ export default {
 }
 
 </script>
-<style lang="scss">
+<style scoped lang="scss">
 //轮播图
 #banner{
   height: rem(201px);
@@ -160,7 +160,7 @@ export default {
         text-align: center;
         width: rem(40px);
         height: rem(40px);
-        padding-left: rem(26px);
+        padding-left: rem(20px);
         img{
           width: 100%;
           height: 100%;
@@ -207,7 +207,7 @@ export default {
         width: 100%;
         img{
           width: 100%;
-          height: rem(220px);
+          height: rem(187px);
         }
       }
     }
@@ -218,19 +218,25 @@ export default {
 #hotlist{
   background: #f5f5f5;
   padding: 0 rem(10px);
+  
   ul{
     li{
       background: white;
+      border-bottom: solid 1px #f0f0f0;
       a{
         display: block;
         color: #222;
-        margin-bottom: rem(15px);
+        padding-bottom: rem(15px);
+        padding: 0 rem(25px);
         img{
-          width: 100%;
-          height: rem(310px);
+          // margin: 0 auto;
+          width: rem(250px);
+          height: rem(250px);
         }
         h2{
-          font-size: rem(18px);
+          font-size: rem(14px);
+          height: rem(23px);
+          line-height: rem(23px);
           overflow: hidden;
           text-overflow:ellipsis;
           white-space: nowrap;
@@ -239,16 +245,19 @@ export default {
         p{
           text-align: center;
           color: #bbb;
-          font-size: rem(15px);
+          font-size: rem(14px);
         }
         .price{
           text-align: center;
           color: #bbb;
+          font-size: rem(14px);
+          padding-top: rem(8px);
           span:nth-child(1){
             color: #ff666b;
+            font-size: rem(20px);
             em{
               font-weight: 600;
-              font-size: rem(25px);
+              // font-size: rem(20px);
             }
           }
         }
@@ -256,13 +265,14 @@ export default {
           text-align: center;
           padding-bottom: rem(8px);
           span{
-            color: #fff;
-            border-radius: rem(20px);
-            background: #ff666b;
-            display: inline-block;
-            padding: rem(7px) rem(12px);
-            box-shadow: 0 rem(2px) rem(8px) 0 #ff666b;
-            margin-left: rem(10px);
+            font-size: rem(14px);
+                color: #fff;
+                border-radius: rem(20px);
+                background: #ff666b;
+                display: inline-block;
+                padding: rem(7px) rem(12px);
+                box-shadow: 0 rem(2px) rem(8px) 0 #ff666b;
+                margin-left: rem(10px);
           }
         }
       }

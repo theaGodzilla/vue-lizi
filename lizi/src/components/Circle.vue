@@ -27,7 +27,7 @@
 
     <!-- 内容模块 -->
     <div class="partbd">
-      <ul class="product_list" id="search_list">
+      <ul class="product_list" id="search_list" style="margin:0">
         <li v-for="item in goodslist" :key="item.goods_id">
           <a href="#">
             <div class="pic">
@@ -52,6 +52,7 @@
 </template>
 
 <script>
+
 export default {
   // name: "Circle",
   data() {
@@ -210,7 +211,7 @@ body{
   ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    // padding: 0;
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -219,27 +220,51 @@ body{
     // padding-inline-start: 40px;
     li {
       display: list-item;
-      height: 100px;
+      // display: flex;
+      height: rem(100px);
       text-align: -webkit-match-parent;
-      margin-bottom: 10px;
+      margin-bottom: rem(10px);
       // background: white;
       border-bottom: 1px solid #ddd;
-      .pic {
-        width: 90px;
-        height: 90px;
-        float: left;
-        max-width: 200px;
-        padding-right: 10px;
-        img{
-          width: 90px;
-          height: 90px;
+      a{
+        overflow: hidden;
+        display: flex;
+        .pic {
+        width: rem(90px);
+        height: rem(90px);
+        // float: left;
+        max-width: rem(200px);
+        padding-right: rem(10px);
+          img{
+            width: rem(90px);
+            height: rem(90px);
+          }
+        }
+        .info {
+          // -webkit-box-flex: 1;
+          flex: 1;
+          color: black;
+          float: left;
+          .name{
+            font-size: rem(15px);
+          }
+          .price{
+            height: rem(30px);
+            .now{
+              font-size: rem(15px);
+            }
+            .old{
+              font-size: rem(14px);
+            }
+          }
+          .sale{
+            font-size: rem(15px);
+          }
         }
       }
-      .info {
-        -webkit-box-flex: 1;
-        color: black;
-        // float: right;
-      }
+      
+
+
     }
   }
 }

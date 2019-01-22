@@ -24,7 +24,10 @@
     <div id="top" @click="toTop">
       TOP
     </div>
-    <router-view/>
+    <div id="Mian">
+      <router-view/>
+    </div>
+    
    
 
     <!-- 底部 -->
@@ -33,7 +36,6 @@
     </div> -->
   </div>
 </template>
-
 <script>
 export default {
   name:'Home',
@@ -83,19 +85,25 @@ export default {
     // this.selected = this.$route.name;
   }
 
-}
+  }
+
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+#Home{
+  display: flex;
+  flex-direction: column;
+}
+#Mian{
+  flex: 1;
+}
 .iconfont{
   font-weight: 700;
 }
 
 #header{
   position: relative;
-  height: rem(87px);
+  height: rem(84px);
 }
 
 #headerdiv{
@@ -127,6 +135,7 @@ export default {
       .is-selected{
           // border-color:;
           border-bottom: 2px solid #ff666b;
+          color: #ff666b;
         }
     }
   
@@ -160,6 +169,7 @@ export default {
   position: fixed;
   right: rem(10px);
   bottom: rem(100px);
+  font-size: rem(15px);
 }
 
 
@@ -169,5 +179,13 @@ export default {
 #footer{
   height: rem(100px);
 }
+// a {
+//   color: #42b983;
+// } 
+    // .ceshi{
+    //   background: red;
+    //   width: rem(200px);
+    //   height: rem(100px);
+    // }
 
-</style>
+  </style>

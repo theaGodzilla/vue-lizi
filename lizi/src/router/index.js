@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-// import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router);
 
@@ -17,24 +16,27 @@ import Home from '@com/Home';
   import Qingcang from '@com/homelist/qingcang'; 
 import List from '@com/List';
 import Circle from '@com/Circle';
-import Cart from '@com/Cart';
-import Person from '@com/Person';
+// import Cart from '@com/Cart';
+// import Person from '@com/Person';
 import Search from '@com/Search';
 import Thelists from '@com/Thelists';
 import Detail from '@com/detail';
+import Cart from '@com/cart/Cart';
+import Person from '@com/person/Person';
+import Login from '@com/Login';
+import Reg from '@com/Reg';
+import Classify from '@com/Classify';
 
-//
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      redirect: 'Home'
     },
     {
       path: '/home',
-      // name: 'Home',
+      name: 'Home',
       component: Home,
       children:[
         {
@@ -104,9 +106,9 @@ export default new Router({
       component: Person
     },
     {
-      path: '/search',
-      name: 'Search',
-      component: Search
+      path: '/login',
+      name: 'Login',
+      component: Login
     },
     {
       path:'/thelists',
@@ -117,6 +119,20 @@ export default new Router({
       path:'/detail',
       name:'Detail',
       component:Detail
+    },{
+      path: '/reg',
+      name: 'Reg',
+      component: Reg
+    },
+    {
+      path: '/classify',
+      name: 'Classify',
+      component: Classify
+    },{
+      path: '/search',
+      name: 'Search',
+      component: Search
     }
+ 
   ]
 })

@@ -10,7 +10,28 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/jmapi':{
+        target:"http://mobile.jumei.com",//代理目标服务器
+        changeOrigin: true,
+        pathRewrite: {'^/jmapi' : ''}, //替换部分路径
+      },
+      '/mjmapi':{
+        target:"http://m.jumei.com",//代理目标服务器
+        changeOrigin: true,
+        pathRewrite: {'^/mjmapi' : ''}, //替换部分路径
+      } ,
+      '/dbapi':{
+        target:"http://m.lizi.com/newIndex",//代理目标服务器
+        changeOrigin: true,
+        pathRewrite: {'^/dbapi' : ''}, //替换部分路径
+      },
+      '/api':{
+          target:"http://h5.jumei.com",
+          changeOrigin:true,
+          pathRewrite:{'^/api':''}
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
