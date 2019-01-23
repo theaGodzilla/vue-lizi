@@ -49,7 +49,7 @@
         // console.log(showname);
         // let showname = parseInt(Math.random()*10000000);
         // console.log(Math.random().toString(36).substr(2));
-        this.$axios.get('http://localhost:17171/checknickname',{
+        this.$axios.get('47.112.14.49:17171/checknickname',{
           params:{
             username:name
           }

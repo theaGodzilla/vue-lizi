@@ -107,7 +107,7 @@ export default {
   created() {
     // this.getdata();
     
-    this.$axios.get("/dbapi").then(res=>{
+    this.$axios.get("http://localhost:17171/mlproxy/").then(res=>{
         // console.log(res.data.model);
         this.Banner = res.data.model.banners.list;
         // console.log(this.Banner);
@@ -116,7 +116,7 @@ export default {
         this.Partbds = res.data.model.sourceAdv.model;
         // console.log(this.Partbds);
     })
-    this.$axios.get("/dbapi/recItems?max=10&url=%2FnewIndex%2FrecItems&id=&type=HOT&off").then(res=>{
+    this.$axios.get("http://localhost:17171/mlproxy/HomeLiList?max=10&url=%2FnewIndex%2FrecItems&id=&type=HOT&off").then(res=>{
         // console.log(res.data.model);
         this.Hotlist = res.data.model;
 
@@ -125,7 +125,7 @@ export default {
 }
 
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 //轮播图
 .mint-swipe-indicators{
   .is-active{
@@ -140,7 +140,7 @@ export default {
   }
   .mint-swipe-indicators{
     .is-active{
-      background: red;//???????????????????
+      background: red;
     }
   }
   .mint-swipe-indicator{

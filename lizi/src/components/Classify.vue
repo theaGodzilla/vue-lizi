@@ -65,7 +65,7 @@
       }
     },
     created() {
-      this.$axios.get('/jmapi/msapi/mall/allcategories.json').then(res => {
+      this.$axios.get('http://localhost:17171/jmproxy/Classifys').then(res => {
         // console.log(res.data.data);
         let {
           data
@@ -78,7 +78,7 @@
 
       
       // 品牌分类
-      this.$axios.get('/mjmapi/search/index?category_id=62&page=2&ajax=get').then(res => {
+      this.$axios.get('http://localhost:17171/mjmproxy/CBrand?category_id=62&page=2&ajax=get').then(res => {
         // console.log(res);
         let {
           data

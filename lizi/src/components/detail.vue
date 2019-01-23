@@ -49,8 +49,30 @@
                     </div>
                     
                 </div>
-                <mt-popup v-model="display" position="bottom">
-                    我是弹框
+                <mt-popup class="popup" v-model="popupVisible" position="bottom" popup-transition="popup-fade">
+                    <ul>
+                        <li>
+                            <img class="secondphoto" :src="lists.size[0].img" alt="" srcset="">
+                            <div class="popuptip">
+                                <p class="popprice">￥{{lists.jumei_price}}</p>
+                                <p class="invertory">库存{{lists.size[0].stock}}件</p>
+                                <!-- <p class="choose">已选："llll"</p> -->
+                            </div>
+                        </li>
+                        <li>
+                            <p class="content">化妆品净含量</p>
+                            <div>
+                                <!-- <button :class="{cbtn1:obtn1,sbtn1:nbtn1}" @click="btnchoose01">125ml</button>
+                                <button :class="{cbtn2:obtn2,sbtn2:nbtn2}" @click="btnchoose02">250ml</button> -->
+                                <input type="button" :value="lists.size[0].size" :class="{popbtn:popbtn,btnchoosed:btnchoosed}" @click="popchoose">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="popupbar">
+                        <span class="btn-sure" @click="addcart">加入购物车</span>
+                        <span class="btn-detail">立即购买</span>
+                    </div>
+                    <b class="close" @click="closed">×</b>
                 </mt-popup>
                 <!-- <div class="conments">
                     <p>买过的人这样说</p>
@@ -71,27 +93,58 @@ export default {
         return{
             lists:[],
             thelist:[],
-            display:false,
+            // display:false,
+            popupVisible: false,
+            popbtn:true,
+            btnchoosed:false,
         }
     },
     methods:{
         goto(){
-            this.display = !this.display;
+            this.popupVisible = !this.popupVisible;
         },
         to(name){
              this.$router.push({path:name})
         },
+        closed() {
+            this.popupVisible = false;
+        },
+        popchoose(){
+            this.btnchoosed = true;
+        },
+        addcart(){
+            // console.log(localStorage.getItem('Nname'));
+            console.log(this.thelist.name)
+            let title = this.thelist.name;
+            let imgurl = this.lists.img;
+            let price = this.lists.jumei_price;
+            let num = this.lists.size[0].stock;
+            let size = this.lists.size[0].size;
+            let uid = localStorage.getItem('Nname');
+            this.$axios.get(`47.112.14.49:17171/addcart`,{
+                params:{
+                    uid:uid,
+                    title:encodeURI(title),
+                    price:price,
+                    size:size,
+                    num:num,
+                    imgurl:imgurl
+                }
+            }).then(res=>{
+                console.log(res)
+            })
+        }
     },
     created(){
         // console.log(this.$route);
         let id = this.$route.query.id;
         let type = this.$route.query.type;
-        this.$axios.get(`/api/product/ajaxDynamicDetail?item_id=${id}&type=${type}`)
+        this.$axios.get(`http://localhost:17171/proxy/DynamicDetail?item_id=${id}&type=${type}`)
         .then(res=>{
             console.log(res.data.data.result);
             this.lists = res.data.data.result;
         });
-        this.$axios.get(`/api/product/ajaxStaticDetail?item_id=${id}&type=${type}`)
+        this.$axios.get(`http://localhost:17171/proxy/StaticDetail?item_id=${id}&type=${type}`)
         .then(res=>{
             console.log(res.data.data);
             this.thelist = res.data.data;
@@ -247,6 +300,129 @@ export default {
                 line-height: rem(30px);
             }
         }
+        .popup {
+              background: #fff;
+              width: 100%;
+              height: 80%;
+              border-radius: rem(10px) rem(10px) 0 0;
+              // position: relative;
+
+              ul {
+                margin: rem(10px) rem(10px) 0 rem(10px);
+
+                li {
+                  height: rem(80px);
+                  border-bottom: rem(1px) solid rgb(226, 225, 225);
+                  font-size: rem(13px);
+
+                  .secondphoto {
+                    width: rem(60px);
+                    height: rem(60px);
+                    float: left;
+                  }
+
+                  .popuptip {
+                    float: left;
+                    width: 60%;
+                    height: rem(60px);
+                    margin-left: rem(10px);
+                    font-size: rem(12px);
+
+                    .popprice {
+                      margin-top: rem(10px);
+                      color: #ec3f0a;
+                    }
+
+                    .invertory,
+                    .choose {
+                      margin: rem(3px);
+                      width: 100%;
+                      padding: 0;
+                      background: none;
+                      font-size: rem(9px);
+                    }
+                  }
+
+                  div {
+                    width: 100%;
+                    height: rem(60px);
+                    margin-top: rem(10px);
+
+                    .popbtn {
+                      width: fit-content;
+                      height: fit-content;
+                      font-size: rem(12px);
+                      text-decoration: underline;
+                      background: rgba(252, 247, 205, 0.664);
+                      border-radius: rem(5px);
+                      padding: rem(5px) rem(10px) rem(5px)rem(10px);
+                      outline: none;
+                      display: block
+                    }
+
+                    .btnchoosed {
+                      border: rem(1px) solid #f37752;
+                      color: #f37752;
+                    }
+                  }
+
+
+                }
+                li:nth-child(2){
+                  display: flex;
+                  flex-direction: column;
+                }
+              }
+
+              .popupbar {
+                position: fixed;
+                bottom: 0;
+                width: 90%;
+                margin-left: rem(10px);
+                margin-right: rem(10px);
+                text-align: center;
+                color: #fff;
+                font-size: rem(14px);
+                font-weight: 100;
+                font-family: '宋体';
+
+                .btn-sure {
+                  float: left;
+                  width: 50%;
+                  background: #f89602;
+                  border-radius: rem(15px) 0 0 rem(15px);
+                  padding: rem(5px) 0 rem(5px) 0;
+                  text-decoration: underline;
+                  letter-spacing: rem(3px);
+                }
+
+                .btn-detail {
+                  float: left;
+                  width: 50%;
+                  background: #ec3f0a;
+                  border-radius: 0 rem(15px) rem(15px) 0;
+                  padding: rem(5px) 0 rem(5px) 0;
+                  text-decoration: underline;
+                  letter-spacing: rem(3px);
+                }
+              }
+
+              .close {
+                position: absolute;
+                right: rem(7px);
+                top: rem(5px);
+                font-size: rem(18px);
+                width: rem(15px);
+                height: rem(15px);
+                line-height: rem(12px);
+                border-radius: 50%;
+                text-align: center;
+                border: rem(1px) solid rgb(197, 194, 194);
+                // background: #e50232;
+                color: rgb(197, 194, 194);
+                font-weight: 100;
+              }
+            }
     }
     footer{
         height: rem(50px);
