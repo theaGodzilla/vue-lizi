@@ -69,8 +69,8 @@
                         </li>
                     </ul>
                     <div class="popupbar">
-                        <span class="btn-sure" @click="addcart">确定</span>
-                        <span class="btn-detail">查看详情</span>
+                        <span class="btn-sure" @click="addcart">加入购物车</span>
+                        <span class="btn-detail">立即购买</span>
                     </div>
                     <b class="close" @click="closed">×</b>
                 </mt-popup>
@@ -113,11 +113,22 @@ export default {
             this.btnchoosed = true;
         },
         addcart(){
-            // console.log(this.lists.size[0].img)
-            console.log(this.lists)
+            // console.log(localStorage.getItem('Nname'));
+            console.log(this.thelist.name)
+            let title = this.thelist.name;
+            let imgurl = this.lists.img;
+            let price = this.lists.jumei_price;
+            let num = this.lists.size[0].stock;
+            let size = this.lists.size[0].size;
+            let uid = localStorage.getItem('Nname');
             this.$axios.get(`http://localhost:17171/addcart`,{
                 params:{
-
+                    uid:uid,
+                    title:encodeURI(title),
+                    price:price,
+                    size:size,
+                    num:num,
+                    imgurl:imgurl
                 }
             }).then(res=>{
                 console.log(res)

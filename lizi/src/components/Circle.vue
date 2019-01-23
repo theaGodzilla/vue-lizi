@@ -86,24 +86,24 @@ export default {
       // console.log(this.$router);
     },
     getdata() {
-      this.$axios.get("http://localhost:17171/proxy/Circledatas?_=1547221028227").then(res => {
-        // console.log(res.data.model);
-        this.navs = res.data.model.list;
-        // console.log(this.navs);
-        this.navs.unshift({
-          id: "ndckdnksv2312313fcsdfnks",
-          mark: "",
-          title: "丽子",
-          type: "ITEM"
-        });
-        // console.log(this.navs[0].id);
-        this.selected = this.navs[0].id;
-      });
+      // this.$axios.get("http://localhost:17171/proxy/Circledatas?_=1547221028227").then(res => {
+      //   // console.log(res.data.model);
+      //   this.navs = res.data.model.list;
+      //   // console.log(this.navs);
+      //   this.navs.unshift({
+      //     id: "ndckdnksv2312313fcsdfnks",
+      //     mark: "",
+      //     title: "丽子",
+      //     type: "ITEM"
+      //   });
+      //   // console.log(this.navs[0].id);
+      //   this.selected = this.navs[0].id;
+      // });
     },
     //bpi/index.php?act=goods&op=goods_list&keyword=&page=10&curpage=1
     getmain() {
       this.$axios
-        .get(`/api/search/index?&page=${this.page}&ajax=get`)//,{params:{act:'goods',op:'item_list',keyword:'',page:10,curpage:1}
+        .get(`http://localhost:17171/proxy/Circledatas?&page=${this.page}&ajax=get`)//,{params:{act:'goods',op:'item_list',keyword:'',page:10,curpage:1}
         .then(res => {
           // console.log(res.data.data.item_list);
           // this.item_list = res.data.data.item_list;

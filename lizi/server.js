@@ -396,7 +396,7 @@ app.post('/reg',bodyparser.urlencoded({extended:false}),(req,res)=>{
       // console.log(req);
       // res.send('hello world');
       // 获取传来的用户名
-      let {username} = req.query;
+      let {uid,title,size,num,price,imgurl} = req.query;
       //连接数据库
       MongoClient.connect('mongodb://localhost:27017',(err,database)=>{
           //连接成功后执行回调函数
@@ -410,7 +410,7 @@ app.post('/reg',bodyparser.urlencoded({extended:false}),(req,res)=>{
           let cart = db.collection('cart');
     
           //查询
-          cart.insertOne({title:121,price:1515,num:555,size:88,imgurl:888},(err,result)=>{
+          cart.insertOne({uid,title,price,num,size,imgurl},(err,result)=>{
               if(err) throw err;
               // console.log(result);//若存在，则出现信息，如不存在则出现null
               if( result ){
