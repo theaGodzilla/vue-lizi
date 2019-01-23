@@ -44,20 +44,36 @@
     },
     created(){
       //大全选
-      // bus.$off('bigcheck');
+      console.log(888);
+      bus.$off('bigcheck');
       bus.$on('bigcheck',checktar=>{
         console.log(checktar);
         console.log(666);
-        // if(checktar){
-        //   console.log($('.checkdian'));
-        //    $('.checkdian').prop('checked',true);
-        // }else{
-        //   console.log($('.checkdian'));
-        //   $('.checkdian').prop('checked',false);
-        // }
+        if(checktar){
+          console.log($('.checkdian'));
+           $('.checkdian').prop('checked',true);
+        }else{
+          console.log($('.checkdian'));
+          $('.checkdian').prop('checked',false);
+        }
         
       })
     },
+    // updated(){
+    //    bus.$on('bigcheck',checktar=>{
+    //     console.log(checktar);
+    //     console.log(666);
+    //     if(checktar){
+    //       console.log($('.checkdian'));
+    //        $('.checkdian').prop('checked',true);
+    //     }else{
+    //       console.log($('.checkdian'));
+    //       $('.checkdian').prop('checked',false);
+    //     }
+        
+    //   })
+    // },
+
     
     components: {
       CartList,
