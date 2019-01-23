@@ -58,7 +58,7 @@ export default {
     }
     },
     created() {
-        this.$axios.get("http://localhost:17171/mlproxy/HgetItemDetailList?max=10&url=%2FnewIndex%2FgetItemDetailList&id=5767c678e4b0edc8bf0af2c1&type=ITEM&offset=0")
+        this.$axios.get("47.112.14.49:17171/mlproxy/HgetItemDetailList?max=10&url=%2FnewIndex%2FgetItemDetailList&id=5767c678e4b0edc8bf0af2c1&type=ITEM&offset=0")
         .then(res=>{
             // console.log(res.data.model.data);
             this.Mainlist = res.data.model.data;//懒加载五条

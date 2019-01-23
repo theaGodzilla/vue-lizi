@@ -103,7 +103,7 @@ export default {
     //bpi/index.php?act=goods&op=goods_list&keyword=&page=10&curpage=1
     getmain() {
       this.$axios
-        .get(`http://localhost:17171/proxy/Circledatas?&page=${this.page}&ajax=get`)//,{params:{act:'goods',op:'item_list',keyword:'',page:10,curpage:1}
+        .get(`47.112.14.49:17171/proxy/Circledatas?&page=${this.page}&ajax=get`)//,{params:{act:'goods',op:'item_list',keyword:'',page:10,curpage:1}
         .then(res => {
           // console.log(res.data.data.item_list);
           // this.item_list = res.data.data.item_list;
@@ -128,7 +128,7 @@ export default {
       if (scrollTop + windowHeight == scrollHeight) {
         this.page = this.page + 1;
         this.$axios
-          .get(`/api/search/index?&page=${this.page}&ajax=get`)
+          .get(`47.112.14.49:1717/proxy/Circledatas?&page=${this.page}&ajax=get`)
           .then(res => {
             // console.log(res.data.data);
             if (res.data.data.item_list.length == 0) {

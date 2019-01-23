@@ -72,7 +72,7 @@ export default {
             console.log(arg);
             this.key = arg;
             // console.log(arg);
-            this.$axios.get(`http://localhost:17171/proxy/Circledatas?search=${arg}&page=${this.page}&ajax=get`)
+            this.$axios.get(`47.112.14.49:17171/proxy/Circledatas?search=${arg}&page=${this.page}&ajax=get`)
             .then(res=>{
                 // console.log(res);
                 this.lists = res.data.data.item_list;
@@ -92,7 +92,7 @@ export default {
                     this.page++;
                     console.log(this.page);
                     this.$axios
-                    .get(`http://localhost:17171/proxy/Circledatas?search=${arg}&page=${this.page}&ajax=get`)
+                    .get(`47.112.14.49:17171/proxy/Circledatas?search=${arg}&page=${this.page}&ajax=get`)
                     .then(res=>{
                         console.log(res.data.data.item_list.length);
                         if(res.data.data.item_list.length==0){

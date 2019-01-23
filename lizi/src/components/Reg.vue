@@ -116,7 +116,7 @@
         if (reg.test(num)) {
           this.istelshow = false;
           this.timer = setTimeout(() => {
-            this.$axios.get('http://localhost:17171/checkname', {
+            this.$axios.get('47.112.14.49:17171/checkname', {
               params: {
                 username: num
               }
@@ -151,7 +151,7 @@
           if (!istelshow && !isideshow && !ispsdshow) {
             let username = this.tel;
             let password = this.psw;
-            this.$axios.post(`http://localhost:17171/reg?username=${username}&password=${password}`).then(res => {
+            this.$axios.post(`47.112.14.49:17171/reg?username=${username}&password=${password}`).then(res => {
               console.log(res);
               let code = res.data.code;
               if (code = 1) {

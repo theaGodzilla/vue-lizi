@@ -42,7 +42,7 @@ export default {
             }else{
                 let username = this.username;
                 let password = this.password;
-                this.$axios.post('http://localhost:17171/login',{
+                this.$axios.post('47.112.14.49:17171/login',{
                     params:{
                         username: username,
                         password: password

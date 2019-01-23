@@ -60,7 +60,7 @@ export default {
       // console.log(this.$router);
     },
     getdata(){
-      this.$axios.get("http://localhost:17171/mlproxy/Homedatas?_=1547221028227").then(res=>{
+      this.$axios.get("47.112.14.49:17171/mlproxy/Homedatas?_=1547221028227").then(res=>{
         // console.log(res.data.model);
         this.navs = res.data.model.list;
         // console.log(this.navs);

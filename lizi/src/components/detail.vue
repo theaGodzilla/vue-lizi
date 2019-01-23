@@ -121,7 +121,7 @@ export default {
             let num = this.lists.size[0].stock;
             let size = this.lists.size[0].size;
             let uid = localStorage.getItem('Nname');
-            this.$axios.get(`http://localhost:17171/addcart`,{
+            this.$axios.get(`47.112.14.49:17171/addcart`,{
                 params:{
                     uid:uid,
                     title:encodeURI(title),
@@ -139,12 +139,12 @@ export default {
         // console.log(this.$route);
         let id = this.$route.query.id;
         let type = this.$route.query.type;
-        this.$axios.get(`http://localhost:17171/proxy/DynamicDetail?item_id=${id}&type=${type}`)
+        this.$axios.get(`47.112.14.49:17171/proxy/DynamicDetail?item_id=${id}&type=${type}`)
         .then(res=>{
             console.log(res.data.data.result);
             this.lists = res.data.data.result;
         });
-        this.$axios.get(`http://localhost:17171/proxy/StaticDetail?item_id=${id}&type=${type}`)
+        this.$axios.get(`47.112.14.49:17171/proxy/StaticDetail?item_id=${id}&type=${type}`)
         .then(res=>{
             console.log(res.data.data);
             this.thelist = res.data.data;
