@@ -17,7 +17,7 @@
     "jquery": "^3.3.1",
     "lib-flexible": "^0.3.2",
     "mint-ui": "^2.2.13",
-    "mongodb": "^3.1.10",
+    "mongodb": "^3.1.13",
     "node-sass": "^4.11.0",
     "px2rem-loader": "^0.1.9",
     "require": "^2.4.20",
